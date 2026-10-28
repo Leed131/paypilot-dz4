@@ -1,0 +1,6968 @@
+{
+  "status": "passed",
+  "operation": "offline replay; no model calls",
+  "set_hash": "67ca1d4fe79f",
+  "profiles": {
+    "clean": {
+      "cases_passed": 5,
+      "cases_total": 5,
+      "dialogues_passed": 25,
+      "dialogues_total": 25
+    },
+    "lesson-05": {
+      "cases_passed": 1,
+      "cases_total": 5,
+      "dialogues_passed": 8,
+      "dialogues_total": 25
+    }
+  },
+  "independent_sessions": 50,
+  "runs": [
+    {
+      "profile": "clean",
+      "case": "CONV-H01",
+      "run": 1,
+      "session": "96f7e31742f4",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H01",
+      "run": 2,
+      "session": "368ce649268f",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H01",
+      "run": 3,
+      "session": "3e8e8f5cfe86",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H01",
+      "run": 4,
+      "session": "6cea3136928e",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H01",
+      "run": 5,
+      "session": "7ca40dec0127",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H02",
+      "run": 1,
+      "session": "95625732e738",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H02",
+      "run": 2,
+      "session": "8ca065c6dc8b",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H02",
+      "run": 3,
+      "session": "4642364f9771",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H02",
+      "run": 4,
+      "session": "ad2ecbbc65a5",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H02",
+      "run": 5,
+      "session": "1f2aa2f2ee57",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H03",
+      "run": 1,
+      "session": "628663ce251e",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H03",
+      "run": 2,
+      "session": "50bcd6668676",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H03",
+      "run": 3,
+      "session": "09f4b6e2c250",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H03",
+      "run": 4,
+      "session": "724b652b67d1",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H03",
+      "run": 5,
+      "session": "51b7c99ad8df",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H04",
+      "run": 1,
+      "session": "f5738001d36d",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "no_span",
+          "label": "control: agent.summarize did NOT run",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            6
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H04",
+      "run": 2,
+      "session": "18f497f7de4d",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "no_span",
+          "label": "control: agent.summarize did NOT run",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            6
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H04",
+      "run": 3,
+      "session": "95c703be9feb",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "no_span",
+          "label": "control: agent.summarize did NOT run",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            6
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H04",
+      "run": 4,
+      "session": "d139a5782e30",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "no_span",
+          "label": "control: agent.summarize did NOT run",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            6
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H04",
+      "run": 5,
+      "session": "844df5521170",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "no_span",
+          "label": "control: agent.summarize did NOT run",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            6
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H05",
+      "run": 1,
+      "session": "b08c05276aba",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "tool_sequence",
+          "label": "oracle: consult the corpus for the initial classification",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H05",
+      "run": 2,
+      "session": "5e8c61a7f9a9",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "tool_sequence",
+          "label": "oracle: consult the corpus for the initial classification",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H05",
+      "run": 3,
+      "session": "33bd022d6220",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "tool_sequence",
+          "label": "oracle: consult the corpus for the initial classification",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H05",
+      "run": 4,
+      "session": "98a72513d047",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "tool_sequence",
+          "label": "oracle: consult the corpus for the initial classification",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "clean",
+      "case": "CONV-H05",
+      "run": 5,
+      "session": "190ba256aa1a",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "tool_sequence",
+          "label": "oracle: consult the corpus for the initial classification",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H01",
+      "run": 1,
+      "session": "5ee0c188f62a",
+      "passed": false,
+      "failed_turns": [
+        5,
+        7
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H01",
+      "run": 2,
+      "session": "86856cb99c1a",
+      "passed": false,
+      "failed_turns": [
+        5,
+        7
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H01",
+      "run": 3,
+      "session": "23bdf8af00c2",
+      "passed": false,
+      "failed_turns": [
+        5,
+        7
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H01",
+      "run": 4,
+      "session": "cdbd284b8163",
+      "passed": false,
+      "failed_turns": [
+        5,
+        7
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H01",
+      "run": 5,
+      "session": "3c1e9d57f48a",
+      "passed": false,
+      "failed_turns": [
+        5,
+        7
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H02",
+      "run": 1,
+      "session": "75b782b1d164",
+      "passed": false,
+      "failed_turns": [
+        4,
+        5
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H02",
+      "run": 2,
+      "session": "ae4afe9e4d03",
+      "passed": false,
+      "failed_turns": [
+        4,
+        5
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H02",
+      "run": 3,
+      "session": "460f0614b3c7",
+      "passed": false,
+      "failed_turns": [
+        4,
+        5
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H02",
+      "run": 4,
+      "session": "5c1a48fd5945",
+      "passed": false,
+      "failed_turns": [
+        4,
+        5
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H02",
+      "run": 5,
+      "session": "bd8c8c82a4db",
+      "passed": false,
+      "failed_turns": [
+        4,
+        5
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H03",
+      "run": 1,
+      "session": "43ffaf97d22b",
+      "passed": false,
+      "failed_turns": [
+        5,
+        9,
+        10
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H03",
+      "run": 2,
+      "session": "8215c7aa4f44",
+      "passed": false,
+      "failed_turns": [
+        5,
+        9,
+        10
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H03",
+      "run": 3,
+      "session": "a21f5216f754",
+      "passed": false,
+      "failed_turns": [
+        5,
+        9,
+        10
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H03",
+      "run": 4,
+      "session": "120d2cc9faad",
+      "passed": false,
+      "failed_turns": [
+        5,
+        9,
+        10
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H03",
+      "run": 5,
+      "session": "9283ad6b5866",
+      "passed": false,
+      "failed_turns": [
+        5,
+        9,
+        10
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            9
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            10
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": false,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H04",
+      "run": 1,
+      "session": "f6a43f3ef918",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "no_span",
+          "label": "control: agent.summarize did NOT run",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            6
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H04",
+      "run": 2,
+      "session": "bc63760319c3",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "no_span",
+          "label": "control: agent.summarize did NOT run",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            6
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H04",
+      "run": 3,
+      "session": "5caeac0fd22c",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "no_span",
+          "label": "control: agent.summarize did NOT run",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            6
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H04",
+      "run": 4,
+      "session": "415619d5de0a",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "no_span",
+          "label": "control: agent.summarize did NOT run",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            6
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H04",
+      "run": 5,
+      "session": "30a51bc580ae",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "no_span",
+          "label": "control: agent.summarize did NOT run",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "numeric",
+          "label": "dispute_amount_eur still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "transaction_id still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "transaction_date still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "numeric",
+          "label": "filing_window_days still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "numeric",
+          "label": "oracle: initial amount matches customer input",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_called_with",
+          "label": "oracle: verify original transaction and reason with the engine",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            2
+          ],
+          "assertion": "tool_result_numeric",
+          "label": "oracle: engine confirms the initial 90-day window",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "oracle: final deadline matches engine and accepts Unicode hyphens",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "original reason code must accompany the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "no substituted code in the final filing answer",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            4
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            6
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "no_span",
+          "label": "control: no summarization on this turn",
+          "passed": true,
+          "precondition": true
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H05",
+      "run": 1,
+      "session": "8ecafbfda9ac",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "tool_sequence",
+          "label": "oracle: consult the corpus for the initial classification",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H05",
+      "run": 2,
+      "session": "3424048af3f8",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "tool_sequence",
+          "label": "oracle: consult the corpus for the initial classification",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H05",
+      "run": 3,
+      "session": "7fd6170a86ea",
+      "passed": false,
+      "failed_turns": [
+        5,
+        7
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "tool_sequence",
+          "label": "oracle: consult the corpus for the initial classification",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H05",
+      "run": 4,
+      "session": "f57078c19ff9",
+      "passed": false,
+      "failed_turns": [
+        5,
+        7
+      ],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": false,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "tool_sequence",
+          "label": "oracle: consult the corpus for the initial classification",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    },
+    {
+      "profile": "lesson-05",
+      "case": "CONV-H05",
+      "run": 5,
+      "session": "e3e4a72d234d",
+      "passed": true,
+      "failed_turns": [],
+      "checks": [
+        {
+          "turns": [
+            3
+          ],
+          "assertion": "has_span",
+          "label": "agent.summarize is in the trace",
+          "passed": true,
+          "precondition": true
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "regex",
+          "label": "reason_code still holds",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            5
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            7
+          ],
+          "assertion": "not_regex",
+          "label": "reason_code: no substitute",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "regex",
+          "label": "oracle: initial non-delivery reason code matches corpus",
+          "passed": true,
+          "precondition": false
+        },
+        {
+          "turns": [
+            1
+          ],
+          "assertion": "tool_sequence",
+          "label": "oracle: consult the corpus for the initial classification",
+          "passed": true,
+          "precondition": false
+        }
+      ]
+    }
+  ]
+}

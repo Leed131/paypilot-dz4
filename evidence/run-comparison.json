@@ -1,0 +1,137 @@
+{
+  "status": "analysis complete; ready for mentor review",
+  "set_hash": "67ca1d4fe79f",
+  "cases": [
+    {
+      "id": "CONV-H01",
+      "axes": {
+        "length": 7,
+        "entities": 5,
+        "topic_switches": 1
+      },
+      "clean_passed": 5,
+      "lesson_passed": 0,
+      "clean_tokens": 217360,
+      "lesson_tokens": 231145,
+      "first_failed_checks": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "id": "CONV-H02",
+      "axes": {
+        "length": 5,
+        "entities": 5,
+        "topic_switches": 1
+      },
+      "clean_passed": 5,
+      "lesson_passed": 0,
+      "clean_tokens": 150988,
+      "lesson_tokens": 164162,
+      "first_failed_checks": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "id": "CONV-H03",
+      "axes": {
+        "length": 10,
+        "entities": 5,
+        "topic_switches": 2
+      },
+      "clean_passed": 5,
+      "lesson_passed": 0,
+      "clean_tokens": 365690,
+      "lesson_tokens": 346342,
+      "first_failed_checks": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "id": "CONV-H04",
+      "axes": {
+        "length": 7,
+        "entities": 5,
+        "topic_switches": 1
+      },
+      "clean_passed": 5,
+      "lesson_passed": 5,
+      "clean_tokens": 220242,
+      "lesson_tokens": 241681,
+      "first_failed_checks": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": "CONV-H05",
+      "axes": {
+        "length": 7,
+        "entities": 1,
+        "topic_switches": 1
+      },
+      "clean_passed": 5,
+      "lesson_passed": 3,
+      "clean_tokens": 162323,
+      "lesson_tokens": 142909,
+      "first_failed_checks": [
+        null,
+        null,
+        5,
+        5,
+        null
+      ]
+    }
+  ],
+  "forecast_commit": "6d73873034cfbb83e1c4dd94f9e445ceab540503",
+  "forecast_readme_blob": "ce58b35c5f08a31114d0583b0d4bccf1ce9adcc3",
+  "forecast_verification": "GitHub commit metadata and README blob verified; forecast commit is an ancestor of main; local git-log screenshot preceded clean run. First GitHub push occurred after runs.",
+  "profiles": {
+    "clean": {
+      "input_tokens": 927948,
+      "output_tokens": 188655,
+      "total_tokens": 1116603,
+      "elapsed_seconds": 2685.4,
+      "agent_turns": 180,
+      "trace_files": 180,
+      "llm_call_spans": 350,
+      "summary_spans": 20,
+      "summary_ms": 324754.2
+    },
+    "lesson-05": {
+      "input_tokens": 914944,
+      "output_tokens": 211295,
+      "total_tokens": 1126239,
+      "elapsed_seconds": 2423.7,
+      "agent_turns": 180,
+      "trace_files": 180,
+      "llm_call_spans": 377,
+      "summary_spans": 20,
+      "summary_ms": 124464.3
+    }
+  },
+  "case_level_forecast_matches": true,
+  "lesson_failed_dialogues": 17,
+  "lesson_total_dialogues": 25,
+  "loss_vs_manifestation_are_separate": true,
+  "forecast_commit_date_utc": "2026-10-28T19:49:34Z",
+  "first_clean_start_utc": "2026-10-28T19:52:54Z",
+  "forecast_readme_blob_verified": true,
+  "forecast_ancestor_of_main_verified": true,
+  "remote_raw_files_verified": 426
+}

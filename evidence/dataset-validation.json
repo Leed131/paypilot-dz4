@@ -67,5 +67,9 @@
       "invariants": 1,
       "compiled_checks": 7
     }
-  ]
+  ],
+  "model_runs_completed": true,
+  "raw_reports": 2,
+  "new_trace_files": 360,
+  "dataset_bytes_unchanged": true
 }
