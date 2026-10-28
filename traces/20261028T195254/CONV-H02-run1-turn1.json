@@ -1,0 +1,89 @@
+{
+  "case": "CONV-H02",
+  "run": 1,
+  "turn": 1,
+  "user": "I'm CUS-0004. Transaction TX-0401, 240.00 EUR: the goods never arrived. Which reason code applies? State the transaction ID and amount too. Do not open a dispute.",
+  "answer": "What I did: I retrieved your account record to confirm we're working on CUS-0004 (account ACC-1005).\n\nWhat I found: For a purchase where the goods never arrived, the applicable dispute reason code is goods_not_received.\n\nTransaction and amount: TX-0401 — 240.00 EUR.\n\nWhat happens next: I will not open a dispute. If you want me to proceed, I can first check dispute eligibility for TX-0401 and — if eligible — open the dispute on your behalf. Would you like me to do that?",
+  "trace": {
+    "request_id": "f0860db490d04197",
+    "name": "agent.request",
+    "span_id": "52cd069556fd468a",
+    "started_at": 1793217713.340978,
+    "ended_at": 1793217723.889681,
+    "duration_ms": 10548.7,
+    "attributes": {
+      "session.id": "95625732e738",
+      "dialog.step_number": 1,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 2757,
+      "gen_ai.usage.total_output_tokens": 722
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "e6bef63152394802",
+        "started_at": 1793217713.3411157,
+        "ended_at": 1793217714.7798185,
+        "duration_ms": 1438.7,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1321,
+          "gen_ai.usage.output_tokens": 24
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "6653bc33b5d14d01",
+        "started_at": 1793217714.779932,
+        "ended_at": 1793217714.7808497,
+        "duration_ms": 0.9,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {
+            "account_id": ""
+          },
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "83e0a349aa394639",
+        "started_at": 1793217714.7809362,
+        "ended_at": 1793217723.8896449,
+        "duration_ms": 9108.7,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1436,
+          "gen_ai.usage.output_tokens": 698
+        },
+        "children": []
+      }
+    ]
+  }
+}

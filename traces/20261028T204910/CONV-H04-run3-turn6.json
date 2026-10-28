@@ -1,0 +1,47 @@
+{
+  "case": "CONV-H04",
+  "run": 3,
+  "turn": 6,
+  "user": "240 euro, as I said at the start.",
+  "answer": "Understood — I confirm the amount.\n\nWhat I did\n- Reviewed the transaction and our prior eligibility check.\n\nWhat I found\n- Transaction ID: TX-0401\n- Amount: 240.00 EUR\n- Reason code: goods_not_received\n- Transaction date: 2026-07-20\n- Status: settled\n- Dispute eligibility: eligible; filing deadline 2026-10-18\n\nWhat happens next\n- You can: 1) contact TechMart Online for shipment proof or a refund and keep their replies; 2) gather evidence (order confirmation, receipts, tracking, communications); 3) ask me to send a statement to the email on file; or 4) ask me to re-run eligibility and then open a dispute — I will only open a dispute if you explicitly tell me to.  \n- Tell me which of those you want me to do next.",
+  "trace": {
+    "request_id": "cc1d8eb9550647c2",
+    "name": "agent.request",
+    "span_id": "f20fe4bf7b704353",
+    "started_at": 1793222510.7699988,
+    "ended_at": 1793222516.7404547,
+    "duration_ms": 5970.5,
+    "attributes": {
+      "session.id": "5caeac0fd22c",
+      "dialog.step_number": 6,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3491,
+      "gen_ai.usage.total_output_tokens": 642
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "a83362c525db4d15",
+        "started_at": 1793222510.7703671,
+        "ended_at": 1793222516.74042,
+        "duration_ms": 5970.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 3491,
+          "gen_ai.usage.output_tokens": 642
+        },
+        "children": []
+      }
+    ]
+  }
+}

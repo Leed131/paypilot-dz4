@@ -1,0 +1,137 @@
+{
+  "case": "CONV-H05",
+  "run": 2,
+  "turn": 3,
+  "user": "What is my daily outgoing transfer limit in EUR?",
+  "answer": "What I did\n- Checked your account and current limits for customer CUS-0004.\n\nWhat I found\n- Daily outgoing transfer limit (EUR): 5,000 — as of 2026-09-15.\n- Daily remaining today (EUR): 5,000.\n\nWhat happens next\n- If you want to make a transfer now, tell me the account and amount and I’ll proceed. If you’d like to request a permanent limit increase, I can escalate that for you.",
+  "trace": {
+    "request_id": "a7165f543d554091",
+    "name": "agent.request",
+    "span_id": "9ee12dda55a34c6c",
+    "started_at": 1793219540.8124976,
+    "ended_at": 1793219574.2879417,
+    "duration_ms": 33475.4,
+    "attributes": {
+      "session.id": "5e8c61a7f9a9",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6842,
+      "gen_ai.usage.total_output_tokens": 860
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "8b995cdb924d49ae",
+        "started_at": 1793219540.8126142,
+        "ended_at": 1793219562.0021129,
+        "duration_ms": 21189.5,
+        "attributes": {
+          "summary.text": "Summary of conversation (all concrete details needed to continue)\n\nCustomer/account\n- Customer id: CUS-0004\n- Customer name: Danylo Kovalenko\n- Customer tier: tier1\n- Account id: ACC-1005\n- Account customer_id: CUS-0004\n- Account currency: EUR\n- Account balance: 1310.2\n- Account tier: tier1\n- Account holder: Danylo Kovalenko\n\nUser instructions and agent commitments\n- User initial instruction: \"Search Verta documentation: for a purchase where the goods never arrived, which exact dispute reason code applies? Reply with that code only. Do not open a dispute.\"\n- User later: \"Keep that classification for our conversation. Repeat the exact reason code once more.\"\n- Agent committed: \"Acknowledged — I’ve recorded the dispute classification for this conversation.\" (i.e., the agent recorded the chosen dispute classification for this conversation)\n- Agent complied with \"Do not open a dispute\" (no dispute was opened).\n\nSearch/tool calls (exact inputs and notable outputs)\n- get_account call returned:\n  {\"customer\": {\"id\": \"CUS-0004\", \"name\": \"Danylo Kovalenko\", \"tier\": \"tier1\"}, \"accounts\": [{\"id\": \"ACC-1005\", \"customer_id\": \"CUS-0004\", \"currency\": \"EUR\", \"balance\": 1310.2, \"tier\": \"tier1\", \"holder\": \"Danylo Kovalenko\"}]}\n- search_knowledge_base call:\n  - index: \"kb_clean\"\n  - top_k: 4\n  - query: \"dispute reason code goods never arrived 'goods not received' Verta documentation exact code\"\n  - Returned fragments included (verbatim excerpts):\n    - disputes.md: \"Payment dispute rules\\n## Reason codes and chargeback windows\\nEach reason code has a window in days from the transaction date. A dispute opened after the window closes is not eligible.\\n\\n| Reason code | Window (days) |\\n|---|---|\\n| fraud_card_not_present | 120 |\\n| goods_not_received | 90 |\\n| duplicate_charge | 60 |\\n| service_not_rendered | 90 |\\n| unauthorized_debit | 56 |\"\n    - reason-codes.md: \"Reason code guide\\n## Choosing a code\\nThe reason code must match what actually happened. A dispute filed under the\\nwrong code is declined and must be refiled, which may push it past its window.\"\n    - reason-codes.md (another fragment): \"Reason code guide\\n## unauthorized_debit\\nUsed for a direct debit the customer never mandated. This code carries the\\nshortest window overall.\"\n    - disputes-process.md: \"Dispute handling process\\n## Withdrawing a dispute\\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\\nfinal; the same transaction cannot be disputed again under the same reason code.\"\n\nReason codes and windows (from KB)\n- fraud_card_not_present — 120 days\n- goods_not_received — 90 days\n- duplicate_charge — 60 days\n- service_not_rendered — 90 days\n- unauthorized_debit — 56 days\n\nSelected classification and agent messages\n- Agent first reply (exact): goods_not_received\n- Agent acknowledgment (exact): \"Acknowledged — I’ve recorded the dispute classification for this conversation.\"\n- Agent repeated code (exact): goods_not_received\n\nMissing items / not provided in conversation\n- No transaction ids were provided.\n- No transaction amounts (other than account balance) were provided.\n- No transaction dates were provided.\n- No dispute was opened.\n\nActionable next steps for an agent continuing this case\n- If the customer wishes to open a dispute later, use reason code: goods_not_received (90-day window from transaction date). Verify the transaction date to ensure the 90-day window is still open.\n- Ask the customer to provide transaction id(s), exact transaction amount(s) and currency, and transaction date(s) so a dispute can be opened if still within the 90-day window.\n- Note the customer has asked not to open a dispute now and that the dispute classification has been recorded for the conversation.",
+          "summary.replaced_messages": 8
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "978af21db8ac4abf",
+        "started_at": 1793219562.002187,
+        "ended_at": 1793219564.8049812,
+        "duration_ms": 2802.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2169,
+          "gen_ai.usage.output_tokens": 147
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "00c780b71c914939",
+        "started_at": 1793219564.8050056,
+        "ended_at": 1793219564.8054364,
+        "duration_ms": 0.4,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {},
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "e10bf89c1b02441a",
+        "started_at": 1793219564.8054717,
+        "ended_at": 1793219567.0846162,
+        "duration_ms": 2279.1,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2279,
+          "gen_ai.usage.output_tokens": 91
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_limits",
+        "span_id": "5ab0083951994056",
+        "started_at": 1793219567.0846756,
+        "ended_at": 1793219567.0855742,
+        "duration_ms": 0.9,
+        "attributes": {
+          "tool.name": "check_limits",
+          "tool.arguments": {
+            "customer_id": "CUS-0004"
+          },
+          "tool.result": {
+            "tier": "tier1",
+            "as_of": "2026-09-15",
+            "daily_limit_eur": 5000,
+            "daily_spent_eur": 0,
+            "daily_remaining_eur": 5000,
+            "monthly_limit_eur": 50000,
+            "monthly_spent_eur": 35.5,
+            "monthly_remaining_eur": 49964.5
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "e1454a0edc974f5d",
+        "started_at": 1793219567.085624,
+        "ended_at": 1793219574.2879229,
+        "duration_ms": 7202.3,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2394,
+          "gen_ai.usage.output_tokens": 622
+        },
+        "children": []
+      }
+    ]
+  }
+}

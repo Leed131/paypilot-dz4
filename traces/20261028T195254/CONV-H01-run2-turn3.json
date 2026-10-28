@@ -1,0 +1,139 @@
+{
+  "case": "CONV-H01",
+  "run": 2,
+  "turn": 3,
+  "user": "What is my daily outgoing transfer limit in EUR?",
+  "answer": "What I did\n- Retrieved your account (ACC-1005) and checked the on-file transfer limits for customer CUS-0004.\n\nWhat I found\n- Daily outgoing transfer limit: 5,000.00 EUR\n- Daily spent: 0.00 EUR → Daily remaining: 5,000.00 EUR\n- Data as of: 2026-09-15\n\nWhat happens next\n- If you want to make a transfer now, I can help with the steps. If you’d like to request a permanent change to your limits, tell me and I’ll escalate this to a human agent to assist.",
+  "trace": {
+    "request_id": "adacff4c8ce44555",
+    "name": "agent.request",
+    "span_id": "8591665525e04e82",
+    "started_at": 1793217310.6262093,
+    "ended_at": 1793217337.184576,
+    "duration_ms": 26558.4,
+    "attributes": {
+      "session.id": "368ce649268f",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6978,
+      "gen_ai.usage.total_output_tokens": 762
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "df6081c008f3417d",
+        "started_at": 1793217310.626295,
+        "ended_at": 1793217325.9020495,
+        "duration_ms": 15275.8,
+        "attributes": {
+          "summary.text": "Summary of support conversation (for follow-up)\n\nCustomer and account\n- Customer ID: CUS-0004\n- Customer name: Danylo Kovalenko\n- Customer tier: tier1\n- Account returned: ACC-1005\n  - customer_id: CUS-0004\n  - holder: Danylo Kovalenko\n  - currency: EUR\n  - balance: 1310.2 EUR\n  - tier: tier1\n\nRelevant transactions (from get_transactions)\n- TX-0401\n  - account_id: ACC-1005\n  - date: 2026-07-20\n  - amount: 240.00 EUR\n  - merchant: TechMart Online\n  - direction: out\n  - transfer_type: card\n  - status: settled\n- TX-0402\n  - account_id: ACC-1005\n  - date: 2026-07-14\n  - amount: 240.00 EUR\n  - merchant: TechMart Online\n  - direction: out\n  - transfer_type: card\n  - status: settled\n- TX-0403\n  - account_id: ACC-1005\n  - date: 2026-09-01\n  - amount: 35.50 EUR\n  - merchant: CityParking\n  - direction: out\n  - transfer_type: card\n  - status: settled\n\nCustomer requests and agent actions / commitments\n- Initial user message: Identified as CUS-0004. Asked about TX-0401 (240.00 EUR) — goods never arrived — asked which reason code applies, asked to state transaction ID and amount, and explicitly: \"Do not open a dispute.\"\n  - Agent action: Retrieved account and transactions.\n  - Agent finding reported:\n    - Transaction ID: TX-0401\n    - Amount: 240.00 EUR\n    - Merchant: TechMart Online\n    - Date: 2026-07-20\n    - Status: settled\n    - Applicable reason code: goods_not_received\n  - Commitment: Will not open a dispute as requested; noted that to open later an eligibility check is required.\n\n- Follow-up user message: Asked to run the official eligibility tool for TX-0401 using reason goods_not_received; requested to state transaction date, filing window (in days), deadline, reason code and amount, and again: \"Do not open a dispute.\"\n  - Tool used: check_dispute_eligibility\n  - Tool result:\n    - eligible: true\n    - reason_code: goods_not_received\n    - window_days: 90\n    - tx_date: 2026-07-20\n    - as_of: 2026-09-15\n    - deadline: 2026-10-18\n    - checks:\n      - reason_code: pass\n      - tx_status: pass\n      - window: pass\n      - compliance_hold: pass\n  - Agent finding reported:\n    - Transaction ID: TX-0401\n    - Transaction date: 2026-07-20\n    - Amount: 240.00 EUR\n    - Reason code checked: goods_not_received\n    - Filing window: 90 days\n    - Deadline to file: 2026-10-18\n    - Eligibility result: eligible (all checks passed)\n  - Commitment: Will not open the dispute (user requested). If user asks to proceed, agent will open/file the dispute for 240.00 EUR.\n\nOther notes for next agent\n- The customer explicitly prohibits opening a dispute at this time. Do not file unless the customer explicitly requests.\n- If the customer later requests filing, use eligibility check results above (as_of 2026-09-15) and file for amount 240.00 EUR under reason code goods_not_received before deadline 2026-10-18.\n- There is another identical-amount transaction (TX-0402 on 2026-07-14) with the same merchant (TechMart Online); confirm with customer whether that is relevant or also disputed if proceeding.\n- All transaction statuses are settled (no pending holds noted). Dispute checks all passed (including compliance_hold).\n- Keep customer informed of exact deadline (2026-10-18) and that filing window is 90 days from tx_date 2026-07-20.\n\nEnd of summary.",
+          "summary.replaced_messages": 10
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "ddd4275a90d0440b",
+        "started_at": 1793217325.9021597,
+        "ended_at": 1793217329.0426,
+        "duration_ms": 3140.4,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2209,
+          "gen_ai.usage.output_tokens": 155
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "81f4c48b209e4ffe",
+        "started_at": 1793217329.042707,
+        "ended_at": 1793217329.0438247,
+        "duration_ms": 1.1,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {
+            "account_id": "ACC-1005"
+          },
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "2092182b491a47ff",
+        "started_at": 1793217329.0439193,
+        "ended_at": 1793217330.1233754,
+        "duration_ms": 1079.5,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2327,
+          "gen_ai.usage.output_tokens": 21
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_limits",
+        "span_id": "b7facf0d8d3b4f6a",
+        "started_at": 1793217330.1235847,
+        "ended_at": 1793217330.1249528,
+        "duration_ms": 1.4,
+        "attributes": {
+          "tool.name": "check_limits",
+          "tool.arguments": {
+            "customer_id": "CUS-0004"
+          },
+          "tool.result": {
+            "tier": "tier1",
+            "as_of": "2026-09-15",
+            "daily_limit_eur": 5000,
+            "daily_spent_eur": 0,
+            "daily_remaining_eur": 5000,
+            "monthly_limit_eur": 50000,
+            "monthly_spent_eur": 35.5,
+            "monthly_remaining_eur": 49964.5
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "299e15a1e78f4896",
+        "started_at": 1793217330.1250753,
+        "ended_at": 1793217337.1845515,
+        "duration_ms": 7059.5,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2442,
+          "gen_ai.usage.output_tokens": 586
+        },
+        "children": []
+      }
+    ]
+  }
+}

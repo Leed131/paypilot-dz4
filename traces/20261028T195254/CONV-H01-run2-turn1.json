@@ -1,0 +1,153 @@
+{
+  "case": "CONV-H01",
+  "run": 2,
+  "turn": 1,
+  "user": "I'm CUS-0004. Transaction TX-0401, 240.00 EUR: the goods never arrived. Which reason code applies? State the transaction ID and amount too. Do not open a dispute.",
+  "answer": "What I did\n- Retrieved your account (CUS-0004) and recent transactions for ACC-1005.\n\nWhat I found\n- Transaction ID: TX-0401\n- Amount: 240.00 EUR\n- Merchant: TechMart Online\n- Date: 2026-07-20\n- Status: settled\n\nApplicable reason code\n- goods_not_received\n\nWhat happens next\n- I will not open a dispute as you requested. If you want me to proceed later, I must first run a dispute eligibility check and — if eligible — I can open the dispute for you. Tell me how you'd like to proceed.",
+  "trace": {
+    "request_id": "9ddec1463d1d4cab",
+    "name": "agent.request",
+    "span_id": "b18b1136b2484576",
+    "started_at": 1793217279.6683261,
+    "ended_at": 1793217300.553267,
+    "duration_ms": 20884.9,
+    "attributes": {
+      "session.id": "368ce649268f",
+      "dialog.step_number": 1,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4438,
+      "gen_ai.usage.total_output_tokens": 1852
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "e160b301f2a54a49",
+        "started_at": 1793217279.6684604,
+        "ended_at": 1793217288.7114804,
+        "duration_ms": 9043.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1321,
+          "gen_ai.usage.output_tokens": 787
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "ad3ced8b62d2444b",
+        "started_at": 1793217288.7115586,
+        "ended_at": 1793217288.7127519,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {},
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "91f47e83c3d44eba",
+        "started_at": 1793217288.7128668,
+        "ended_at": 1793217293.7263625,
+        "duration_ms": 5013.5,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1431,
+          "gen_ai.usage.output_tokens": 415
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_transactions",
+        "span_id": "abce72ed789a42c3",
+        "started_at": 1793217293.726564,
+        "ended_at": 1793217293.72781,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "get_transactions",
+          "tool.arguments": {
+            "account_id": "ACC-1005",
+            "limit": 50
+          },
+          "tool.result": {
+            "transactions": [
+              {
+                "id": "TX-0403",
+                "account_id": "ACC-1005",
+                "date": "2026-09-01",
+                "amount": 35.5,
+                "currency": "EUR",
+                "merchant": "CityParking",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              },
+              {
+                "id": "TX-0401",
+                "account_id": "ACC-1005",
+                "date": "2026-07-20",
+                "amount": 240.0,
+                "currency": "EUR",
+                "merchant": "TechMart Online",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              },
+              {
+                "id": "TX-0402",
+                "account_id": "ACC-1005",
+                "date": "2026-07-14",
+                "amount": 240.0,
+                "currency": "EUR",
+                "merchant": "TechMart Online",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "65233240cd41438e",
+        "started_at": 1793217293.727924,
+        "ended_at": 1793217300.5532234,
+        "duration_ms": 6825.3,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1686,
+          "gen_ai.usage.output_tokens": 650
+        },
+        "children": []
+      }
+    ]
+  }
+}

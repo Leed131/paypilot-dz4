@@ -1,0 +1,47 @@
+{
+  "case": "CONV-H05",
+  "run": 5,
+  "turn": 2,
+  "user": "Keep that classification for our conversation. Repeat the exact reason code once more.",
+  "answer": "goods_not_received",
+  "trace": {
+    "request_id": "f82d3d787ce5409f",
+    "name": "agent.request",
+    "span_id": "bf56df859d404495",
+    "started_at": 1793222921.863074,
+    "ended_at": 1793222924.7602801,
+    "duration_ms": 2897.2,
+    "attributes": {
+      "session.id": "e3e4a72d234d",
+      "dialog.step_number": 2,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 2005,
+      "gen_ai.usage.total_output_tokens": 268
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "fba633fc8d6c4f56",
+        "started_at": 1793222921.8636847,
+        "ended_at": 1793222924.760271,
+        "duration_ms": 2896.6,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2005,
+          "gen_ai.usage.output_tokens": 268
+        },
+        "children": []
+      }
+    ]
+  }
+}

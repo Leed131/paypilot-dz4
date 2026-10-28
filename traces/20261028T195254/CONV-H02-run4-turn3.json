@@ -1,0 +1,137 @@
+{
+  "case": "CONV-H02",
+  "run": 4,
+  "turn": 3,
+  "user": "What is my daily outgoing transfer limit in EUR?",
+  "answer": "What I did\n- I looked up your account (ACC-1005) and checked your transfer limits.\n\nWhat I found\n- Daily outgoing transfer limit: 5,000.00 EUR.\n- Daily used: 0.00 EUR — Daily remaining: 5,000.00 EUR.\n- Data as of: 2026-09-15.\n\nWhat happens next\n- If you want me to check limits for another account, show monthly remaining, or request a limit change, tell me which and I’ll proceed (I can escalate to a human if you’d like to request an increase).",
+  "trace": {
+    "request_id": "41b55cbde4a34595",
+    "name": "agent.request",
+    "span_id": "08179f701dd54531",
+    "started_at": 1793218011.0209208,
+    "ended_at": 1793218038.8136315,
+    "duration_ms": 27792.7,
+    "attributes": {
+      "session.id": "ad2ecbbc65a5",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 7424,
+      "gen_ai.usage.total_output_tokens": 690
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "22c3c693cc2f48b1",
+        "started_at": 1793218011.0211806,
+        "ended_at": 1793218028.149839,
+        "duration_ms": 17128.7,
+        "attributes": {
+          "summary.text": "Summary of support conversation (for follow-up)\n\nCustomer / account\n- Customer ID: CUS-0004\n- Customer name: Danylo Kovalenko\n- Customer tier: tier1\n- Account returned by tool: ACC-1005\n  - Account currency: EUR\n  - Balance: 1310.2 EUR\n  - Account tier: tier1\n  - Account holder: Danylo Kovalenko\n\nRelevant transactions (from get_transactions)\n- TX-0401\n  - Account: ACC-1005\n  - Date: 2026-07-20\n  - Amount: 240.00 EUR\n  - Merchant: TechMart Online\n  - Direction: out\n  - Transfer type: card\n  - Status: settled\n- TX-0402\n  - Account: ACC-1005\n  - Date: 2026-07-14\n  - Amount: 240.00 EUR\n  - Merchant: TechMart Online\n  - Direction: out\n  - Transfer type: card\n  - Status: settled\n- TX-0403 (other recent txn)\n  - Account: ACC-1005\n  - Date: 2026-09-01\n  - Amount: 35.50 EUR\n  - Merchant: CityParking\n  - Direction: out\n  - Transfer type: card\n  - Status: settled\n\nCustomer's request / issue\n- Customer (CUS-0004) reported: \"the goods never arrived\" for TX-0401 (explicitly referenced TX-0401, 240.00 EUR).\n- Customer instruction: \"Do not open a dispute.\" (explicitly requested twice; agent complied.)\n\nKnowledge-base reference (kb_clean search)\n- Dispute reason-code mapping (excerpt returned):\n  - fraud_card_not_present — 120 days\n  - goods_not_received — 90 days\n  - duplicate_charge — 60 days\n  - service_not_rendered — 90 days\n  - unauthorized_debit — 56 days\n- KB guidance: reason code must match the actual problem; filing under wrong code can lead to decline and refile risks. Disputes eligible only if reason code valid, tx status settled, tx date within the reason-code window, and no customer-level restriction (e.g., compliance hold).\n\nAgent actions and findings\n1) Initial response to \"Which reason code applies?\"\n   - Confirmed transaction details for TX-0401 (240.00 EUR, TechMart Online, 2026-07-20, settled).\n   - Recommended reason code: goods_not_received.\n   - Did not open a dispute (per customer instruction).\n   - Offered next steps: (a) check eligibility, (b) open dispute if eligible, or (c) escalate to human.\n\n2) Customer asked: \"Can I dispute it? Use the official eligibility tool... State transaction date, filing window in days, deadline, reason code and amount. Do not open a dispute.\"\n   - Ran official eligibility check (tool output).\n   - Eligibility tool result (check_dispute_eligibility):\n     - eligible: true\n     - reason_code checked: goods_not_received\n     - window_days: 90\n     - tx_date: 2026-07-20\n     - as_of (when eligibility was checked): 2026-09-15\n     - deadline to file: 2026-10-18\n     - checks: reason_code: pass; tx_status: pass; window: pass; compliance_hold: pass\n   - Restated details to customer:\n     - Transaction ID: TX-0401\n     - Amount: 240.00 EUR\n     - Transaction date: 2026-07-20\n     - Reason code: goods_not_received\n     - Filing window: 90 days\n     - Deadline to file (per check on 2026-09-15): 2026-10-18\n     - Eligibility: eligible = true (all checks passed)\n   - Did not open a dispute (per customer instruction).\n   - Offered next steps again: open the dispute now that it’s eligible, or escalate to a human. Awaiting customer's instruction.\n\nOutstanding items / notes for next agent\n- Customer explicitly instructed not to open a dispute; do not file without further confirmation.\n- TX-0401 is eligible to be disputed under goods_not_received; deadline 2026-10-18 (eligibility confirmed as of 2026-09-15).\n- There is a second TechMart Online charge (TX-0402 on 2026-07-14 for 240.00 EUR) — customer did not raise it explicitly but it may be relevant (duplicate charge potential; duplicate_charge window = 60 days per KB, likely expired as of eligibility check date).\n- All eligibility checks passed, including compliance_hold (no account-level restriction).\n- Customer offered two choices; if customer requests to proceed, agent may open dispute for TX-0401 under goods_not_received (but must confirm action with customer first).\n- Record that prior agent committed to not opening the dispute and to waiting for explicit customer consent.\n\nEnd of summary.",
+          "summary.replaced_messages": 12
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "15eaa805c50e42d8",
+        "started_at": 1793218028.149982,
+        "ended_at": 1793218030.1382525,
+        "duration_ms": 1988.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2363,
+          "gen_ai.usage.output_tokens": 83
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "5e2d87c9fb644f82",
+        "started_at": 1793218030.1383073,
+        "ended_at": 1793218030.1392095,
+        "duration_ms": 0.9,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {},
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "aa0d3baa16bb437d",
+        "started_at": 1793218030.1393101,
+        "ended_at": 1793218031.8174489,
+        "duration_ms": 1678.1,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2473,
+          "gen_ai.usage.output_tokens": 27
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_limits",
+        "span_id": "686d840e916e4601",
+        "started_at": 1793218031.8177369,
+        "ended_at": 1793218031.8186188,
+        "duration_ms": 0.9,
+        "attributes": {
+          "tool.name": "check_limits",
+          "tool.arguments": {
+            "customer_id": "CUS-0004"
+          },
+          "tool.result": {
+            "tier": "tier1",
+            "as_of": "2026-09-15",
+            "daily_limit_eur": 5000,
+            "daily_spent_eur": 0,
+            "daily_remaining_eur": 5000,
+            "monthly_limit_eur": 50000,
+            "monthly_spent_eur": 35.5,
+            "monthly_remaining_eur": 49964.5
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "1e62c877df884481",
+        "started_at": 1793218031.8186913,
+        "ended_at": 1793218038.8135903,
+        "duration_ms": 6994.9,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2588,
+          "gen_ai.usage.output_tokens": 580
+        },
+        "children": []
+      }
+    ]
+  }
+}

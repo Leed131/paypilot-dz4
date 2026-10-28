@@ -1,0 +1,82 @@
+{
+  "case": "CONV-H04",
+  "run": 5,
+  "turn": 3,
+  "user": "What is my daily outgoing transfer limit in EUR?",
+  "answer": "What I did\n- Retrieved your transfer limits for CUS-0004.\n\nWhat I found\n- Daily outgoing transfer limit: 5,000.00 EUR (as of 2026-09-15).\n- Daily remaining: 5,000.00 EUR.\n\nWhat happens next\n- If you’d like, I can check monthly limits, verify limits for a different account, or escalate a request to increase your limit — tell me which and I’ll proceed.",
+  "trace": {
+    "request_id": "51cf7a6b93844eec",
+    "name": "agent.request",
+    "span_id": "3869186c0e984eb8",
+    "started_at": 1793219397.043654,
+    "ended_at": 1793219406.9655726,
+    "duration_ms": 9921.9,
+    "attributes": {
+      "session.id": "844df5521170",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4501,
+      "gen_ai.usage.total_output_tokens": 708
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "a86a7a7f35ad4d18",
+        "started_at": 1793219397.043907,
+        "ended_at": 1793219399.8657863,
+        "duration_ms": 2821.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2193,
+          "gen_ai.usage.output_tokens": 155
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_limits",
+        "span_id": "b8ef1050c1584f4a",
+        "started_at": 1793219399.8658855,
+        "ended_at": 1793219399.8673458,
+        "duration_ms": 1.5,
+        "attributes": {
+          "tool.name": "check_limits",
+          "tool.arguments": {
+            "customer_id": "CUS-0004"
+          },
+          "tool.result": {
+            "tier": "tier1",
+            "as_of": "2026-09-15",
+            "daily_limit_eur": 5000,
+            "daily_spent_eur": 0,
+            "daily_remaining_eur": 5000,
+            "monthly_limit_eur": 50000,
+            "monthly_spent_eur": 35.5,
+            "monthly_remaining_eur": 49964.5
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "53e6f3896e434afa",
+        "started_at": 1793219399.8674386,
+        "ended_at": 1793219406.9655466,
+        "duration_ms": 7098.1,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2308,
+          "gen_ai.usage.output_tokens": 553
+        },
+        "children": []
+      }
+    ]
+  }
+}

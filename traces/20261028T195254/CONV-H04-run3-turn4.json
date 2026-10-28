@@ -1,0 +1,128 @@
+{
+  "case": "CONV-H04",
+  "run": 3,
+  "turn": 4,
+  "user": "According to the tariff, what is the standard FX spread percentage for my tier? Give the percentage.",
+  "answer": "What I did\n- Looked up Verta’s tariff schedule for FX spreads.\n\nWhat I found\n- Your tier (tier1 / Tier 1) — standard FX spread: 1.5%.\n\nWhat happens next\n- I can run a full FX quote for a specific conversion (shows rate, spread, allowance and final amount) if you want — tell me the amount and currencies.",
+  "trace": {
+    "request_id": "97680630629b4736",
+    "name": "agent.request",
+    "span_id": "29b46014597048bd",
+    "started_at": 1793219160.251863,
+    "ended_at": 1793219170.6230097,
+    "duration_ms": 10371.1,
+    "attributes": {
+      "session.id": "95c703be9feb",
+      "dialog.step_number": 4,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 6557,
+      "gen_ai.usage.total_output_tokens": 708
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "1982f62e4c244e66",
+        "started_at": 1793219160.2521286,
+        "ended_at": 1793219163.7084045,
+        "duration_ms": 3456.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 3026,
+          "gen_ai.usage.output_tokens": 171
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "e6f0e2b0e22d4a02",
+        "started_at": 1793219163.70851,
+        "ended_at": 1793219163.7095518,
+        "duration_ms": 1.0,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "tariff FX spread tier1 standard FX spread percentage \"tier1\" \"FX spread\" tariff"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "tariff FX spread tier1 standard FX spread percentage \"tier1\" \"FX spread\" tariff",
+            "fragments": [
+              {
+                "id": "tariffs.md#s2",
+                "doc": "tariffs.md",
+                "score": 0.6934,
+                "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tier | FX spread | Free monthly conversion allowance |\n|---|---|---|\n| Tier 1 | 1.5% | EUR 500 |\n| Tier 2 | 0.9% | EUR 1,000 |\n| Tier 3 | 0.5% | EUR 5,000 |"
+              },
+              {
+                "id": "glossary.md#s2",
+                "doc": "glossary.md",
+                "score": 0.6547,
+                "text": "Glossary\n## Spread\nThe percentage Verta adds to the mid-market rate on a conversion. The spread\ndepends on the customer tier."
+              },
+              {
+                "id": "fx-guide.md#s2",
+                "doc": "fx-guide.md",
+                "score": 0.603,
+                "text": "Currency conversion guide\n## Reading a quote\nA complete quote lists: mid rate, spread percentage applied, allowance total\nand allowance used before this conversion, gross converted amount, spread\namount, and the final credited amount. The final amount equals the gross\namount minus the spread amount."
+              },
+              {
+                "id": "fx-guide.md#s1",
+                "doc": "fx-guide.md",
+                "score": 0.4851,
+                "text": "Currency conversion guide\n## How a conversion is priced\nA conversion quote has these components, in order: the mid-market rate for the\ncurrency pair; the tier spread (a percentage of the gross converted amount);\nthe free monthly conversion allowance. If the whole conversion fits within the\ncustomer's remaining monthly allowance, no spread is charged. Once the\nallowance is exhausted, the full tier spread applies to the conversion."
+              }
+            ]
+          },
+          "retrieval.query": "tariff FX spread tier1 standard FX spread percentage \"tier1\" \"FX spread\" tariff",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "tariffs.md#s2",
+              "score": 0.6934,
+              "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tie"
+            },
+            {
+              "id": "glossary.md#s2",
+              "score": 0.6547,
+              "text": "Glossary\n## Spread\nThe percentage Verta adds to the mid-market rate on a conversion. The spread\ndepends on the customer tier."
+            },
+            {
+              "id": "fx-guide.md#s2",
+              "score": 0.603,
+              "text": "Currency conversion guide\n## Reading a quote\nA complete quote lists: mid rate, spread percentage applied, allowance total\nand allowance used before this convers"
+            },
+            {
+              "id": "fx-guide.md#s1",
+              "score": 0.4851,
+              "text": "Currency conversion guide\n## How a conversion is priced\nA conversion quote has these components, in order: the mid-market rate for the\ncurrency pair; the tier s"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "60b832f0fde84f97",
+        "started_at": 1793219163.70966,
+        "ended_at": 1793219170.6229782,
+        "duration_ms": 6913.3,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 3531,
+          "gen_ai.usage.output_tokens": 537
+        },
+        "children": []
+      }
+    ]
+  }
+}

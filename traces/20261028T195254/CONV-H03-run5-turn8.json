@@ -1,0 +1,44 @@
+{
+  "case": "CONV-H03",
+  "run": 5,
+  "turn": 8,
+  "user": "Which currency is used for SEPA transfers?",
+  "answer": "What I did\n- I checked Verta's transfers documentation.\n\nWhat I found\n- SEPA transfers use euros (EUR).\n\nWhat happens next\n- If you want to make a SEPA transfer from your account ACC-1005 or need the fee breakdown/timing for a specific recipient, tell me and I can assist or escalate to a human agent.",
+  "trace": {
+    "request_id": "50cf352092e04254",
+    "name": "agent.request",
+    "span_id": "30d59122a5cb47ca",
+    "started_at": 1793218862.0368562,
+    "ended_at": 1793218865.263068,
+    "duration_ms": 3226.2,
+    "attributes": {
+      "session.id": "51b7c99ad8df",
+      "dialog.step_number": 8,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3867,
+      "gen_ai.usage.total_output_tokens": 209
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "0eb1bb0fedbc474d",
+        "started_at": 1793218862.037155,
+        "ended_at": 1793218865.263029,
+        "duration_ms": 3225.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 3867,
+          "gen_ai.usage.output_tokens": 209
+        },
+        "children": []
+      }
+    ]
+  }
+}

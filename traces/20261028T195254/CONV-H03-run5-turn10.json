@@ -1,0 +1,44 @@
+{
+  "case": "CONV-H03",
+  "run": 5,
+  "turn": 10,
+  "user": "And I still have time to file, right? State the original transaction's reason code, transaction date, filing window in days and filing deadline. Do not open a dispute.",
+  "answer": "What I did\n- I reviewed the prior eligibility check for TX-0401.\n\nWhat I found (exactly)\n- Reason code: goods_not_received\n- Transaction date: 2026-07-20\n- Filing window (days): 90\n- Filing deadline: 2026-10-18\n- As-of date for the eligibility check: 2026-09-15 — so you still have time to file before the 2026-10-18 deadline.\n\nWhat happens next\n- I will not open a dispute (per your instruction). If you want me to open the dispute before 2026-10-18, send a statement, or escalate to a human agent, tell me which and I will proceed.",
+  "trace": {
+    "request_id": "e19d81a8509a4755",
+    "name": "agent.request",
+    "span_id": "dae79ef3f3df40db",
+    "started_at": 1793218871.0470293,
+    "ended_at": 1793218881.647708,
+    "duration_ms": 10600.7,
+    "attributes": {
+      "session.id": "51b7c99ad8df",
+      "dialog.step_number": 10,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4128,
+      "gen_ai.usage.total_output_tokens": 865
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "062ae064a2124a73",
+        "started_at": 1793218871.047385,
+        "ended_at": 1793218881.6476705,
+        "duration_ms": 10600.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 4128,
+          "gen_ai.usage.output_tokens": 865
+        },
+        "children": []
+      }
+    ]
+  }
+}

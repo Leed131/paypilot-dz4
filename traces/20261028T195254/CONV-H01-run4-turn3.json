@@ -1,0 +1,139 @@
+{
+  "case": "CONV-H01",
+  "run": 4,
+  "turn": 3,
+  "user": "What is my daily outgoing transfer limit in EUR?",
+  "answer": "What I did\n- I looked up your account (ACC-1005) and retrieved your current transfer limits.\n\nWhat I found\n- Your daily outgoing transfer limit is €5,000.\n- As of the limits record (2026-09-15) you have €5,000 remaining today.\n\nWhat happens next\n- If you want to make a transfer now, I can help with that. If you’d like to request a permanent limit increase, tell me and I will escalate the request to a human agent.",
+  "trace": {
+    "request_id": "6c734a6ef0e54a9c",
+    "name": "agent.request",
+    "span_id": "fed20a6010de4fc8",
+    "started_at": 1793217507.9182596,
+    "ended_at": 1793217535.5626848,
+    "duration_ms": 27644.4,
+    "attributes": {
+      "session.id": "6cea3136928e",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5991,
+      "gen_ai.usage.total_output_tokens": 809
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "ae8e4f4a7f7749f4",
+        "started_at": 1793217507.918485,
+        "ended_at": 1793217523.718802,
+        "duration_ms": 15800.3,
+        "attributes": {
+          "summary.text": "Summary for case continuation\n\nCustomer\n- Customer ID: CUS-0004\n- Name: Danylo Kovalenko\n- Tier: tier1\n\nAccount\n- Account ID: ACC-1005\n- Customer ID: CUS-0004\n- Currency: EUR\n- Balance: 1310.2\n- Tier: tier1\n- Holder: Danylo Kovalenko\n\nTransaction\n- Transaction ID: TX-0401\n- Amount: 240.00 EUR\n- Transaction date: 2026-07-20\n\nKnowledge-base findings (from search_knowledge_base)\n- Applicable reason code for \"goods never arrived\": goods_not_received\n- Dispute reason-code table (from disputes.md): \n  - fraud_card_not_present — 120 days\n  - goods_not_received — 90 days\n  - duplicate_charge — 60 days\n  - service_not_rendered — 90 days\n  - unauthorized_debit — 56 days\n- Guidance: reason code must match the actual problem; filing under wrong code is declined and refile may push past window (reason-codes.md).\n- Dispute withdrawal note: a customer may withdraw before resolution; withdrawal is final and the same transaction cannot be disputed again under the same reason code (disputes-process.md).\n\nEligibility check (official tool)\n- Tool run as_of: 2026-09-15\n- Eligibility result: eligible = true\n- Reason code checked: goods_not_received\n- Filing window (days): 90\n- Transaction date (tx_date): 2026-07-20\n- Filing deadline: 2026-10-18\n- Checks (all passed): reason_code: pass; tx_status: pass; window: pass; compliance_hold: pass\n\nUser instructions and agent commitments\n- User identity: confirmed as CUS-0004 (Danylo Kovalenko).\n- User requests: explicitly asked twice not to open a dispute.\n- Agent actions taken: looked up account, searched KB, ran official dispute-eligibility check for TX-0401 under goods_not_received.\n- Agent commitments: did NOT open a dispute. Will only open a dispute if the customer explicitly confirms (opening a dispute is irreversible). Offered alternatives previously: (a) open dispute upon confirmation, (b) escalate to a human agent, or (c) provide a statement for records.\n\nNext recommended actions for support agent\n- Await explicit customer confirmation to open dispute (if desired) before taking irreversible action.\n- If proceeding, use reason_code = goods_not_received and file by deadline 2026-10-18 (eligibility as of 2026-09-15).\n- If customer withdraws or changes code later, note withdrawal is final and refile under same code may be disallowed per KB guidance.\n\nEnd of summary.",
+          "summary.replaced_messages": 10
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "11fe5ba088404eeb",
+        "started_at": 1793217523.7189069,
+        "ended_at": 1793217526.689385,
+        "duration_ms": 2970.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1880,
+          "gen_ai.usage.output_tokens": 155
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "f0a28c2f996f469b",
+        "started_at": 1793217526.689495,
+        "ended_at": 1793217526.6908104,
+        "duration_ms": 1.3,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {
+            "account_id": "ACC-1005"
+          },
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "26893a64c1fd415f",
+        "started_at": 1793217526.6909115,
+        "ended_at": 1793217528.2292185,
+        "duration_ms": 1538.3,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1998,
+          "gen_ai.usage.output_tokens": 27
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_limits",
+        "span_id": "d0c2dfb468254f46",
+        "started_at": 1793217528.2294288,
+        "ended_at": 1793217528.2306328,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "check_limits",
+          "tool.arguments": {
+            "customer_id": "CUS-0004"
+          },
+          "tool.result": {
+            "tier": "tier1",
+            "as_of": "2026-09-15",
+            "daily_limit_eur": 5000,
+            "daily_spent_eur": 0,
+            "daily_remaining_eur": 5000,
+            "monthly_limit_eur": 50000,
+            "monthly_spent_eur": 35.5,
+            "monthly_remaining_eur": 49964.5
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "1a11c4bd0c494c24",
+        "started_at": 1793217528.2307522,
+        "ended_at": 1793217535.5626507,
+        "duration_ms": 7331.9,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2113,
+          "gen_ai.usage.output_tokens": 627
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "case": "CONV-H05",
+  "run": 3,
+  "turn": 1,
+  "user": "Search Verta documentation: for a purchase where the goods never arrived, which exact dispute reason code applies? Reply with that code only. Do not open a dispute.",
+  "answer": "goods_not_received",
+  "trace": {
+    "request_id": "af44ce32b31c4516",
+    "name": "agent.request",
+    "span_id": "11cce4140ba34f8f",
+    "started_at": 1793219603.5500739,
+    "ended_at": 1793219612.3859394,
+    "duration_ms": 8835.9,
+    "attributes": {
+      "session.id": "33bd022d6220",
+      "dialog.step_number": 1,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4589,
+      "gen_ai.usage.total_output_tokens": 517
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "b65185c462724119",
+        "started_at": 1793219603.5502968,
+        "ended_at": 1793219607.8602715,
+        "duration_ms": 4310.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1311,
+          "gen_ai.usage.output_tokens": 339
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "f1ea9764c57d4545",
+        "started_at": 1793219607.8604329,
+        "ended_at": 1793219607.8614194,
+        "duration_ms": 1.0,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {},
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "dbb15dd56ff74169",
+        "started_at": 1793219607.8615181,
+        "ended_at": 1793219609.6176236,
+        "duration_ms": 1756.1,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1421,
+          "gen_ai.usage.output_tokens": 38
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "1aa2d9e6ea984a13",
+        "started_at": 1793219609.6177406,
+        "ended_at": 1793219609.6192164,
+        "duration_ms": 1.5,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "goods never arrived dispute reason code goods not received reason code Verta documentation"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "goods never arrived dispute reason code goods not received reason code Verta documentation",
+            "fragments": [
+              {
+                "id": "disputes.md#s1",
+                "doc": "disputes.md",
+                "score": 1.206,
+                "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
+              },
+              {
+                "id": "reason-codes.md#s6",
+                "doc": "reason-codes.md",
+                "score": 1.2005,
+                "text": "Reason code guide\n## Choosing a code\nThe reason code must match what actually happened. A dispute filed under the\nwrong code is declined and must be refiled, which may push it past its window."
+              },
+              {
+                "id": "reason-codes.md#s5",
+                "doc": "reason-codes.md",
+                "score": 0.8944,
+                "text": "Reason code guide\n## unauthorized_debit\nUsed for a direct debit the customer never mandated. This code carries the\nshortest window overall."
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 0.8839,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              }
+            ]
+          },
+          "retrieval.query": "goods never arrived dispute reason code goods not received reason code Verta documentation",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes.md#s1",
+              "score": 1.206,
+              "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window "
+            },
+            {
+              "id": "reason-codes.md#s6",
+              "score": 1.2005,
+              "text": "Reason code guide\n## Choosing a code\nThe reason code must match what actually happened. A dispute filed under the\nwrong code is declined and must be refiled, wh"
+            },
+            {
+              "id": "reason-codes.md#s5",
+              "score": 0.8944,
+              "text": "Reason code guide\n## unauthorized_debit\nUsed for a direct debit the customer never mandated. This code carries the\nshortest window overall."
+            },
+            {
+              "id": "disputes-process.md#s6",
+              "score": 0.8839,
+              "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction can"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "bc54bec8e05b4867",
+        "started_at": 1793219609.619329,
+        "ended_at": 1793219612.3859093,
+        "duration_ms": 2766.6,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1857,
+          "gen_ai.usage.output_tokens": 140
+        },
+        "children": []
+      }
+    ]
+  }
+}

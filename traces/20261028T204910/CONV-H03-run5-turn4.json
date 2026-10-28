@@ -1,0 +1,131 @@
+{
+  "case": "CONV-H03",
+  "run": 5,
+  "turn": 4,
+  "user": "According to the tariff, what is the standard FX spread percentage for my tier? Give the percentage.",
+  "answer": "What I did\n- Searched the tariff schedule for your tier.\n\nWhat I found\n- Standard FX spread for tier1: 1.5%.\n\nWhat happens next\n- If you want, I can run a full FX quote for a specific amount and currency pair (shows mid rate, allowance usage and final amount). Would you like me to do that?",
+  "trace": {
+    "request_id": "dc5e2840a1794f96",
+    "name": "agent.request",
+    "span_id": "d89bda9e73194051",
+    "started_at": 1793222178.6432796,
+    "ended_at": 1793222188.5601103,
+    "duration_ms": 9916.8,
+    "attributes": {
+      "session.id": "9283ad6b5866",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4239,
+      "gen_ai.usage.total_output_tokens": 764
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "da2aa0f85f924af5",
+        "started_at": 1793222178.6436155,
+        "ended_at": 1793222182.8024557,
+        "duration_ms": 4158.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1868,
+          "gen_ai.usage.output_tokens": 298
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "7da28ad878374ce0",
+        "started_at": 1793222182.8024852,
+        "ended_at": 1793222182.802976,
+        "duration_ms": 0.5,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "tariff FX spread tier1 standard FX spread percentage tier1 tariff FX spread percentage standard spread"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "tariff FX spread tier1 standard FX spread percentage tier1 tariff FX spread percentage standard spread",
+            "fragments": [
+              {
+                "id": "tariffs.md#s2",
+                "doc": "tariffs.md",
+                "score": 0.6934,
+                "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tier | FX spread | Free monthly conversion allowance |\n|---|---|---|\n| Tier 1 | 1.5% | EUR 500 |\n| Tier 2 | 0.9% | EUR 1,000 |\n| Tier 3 | 0.5% | EUR 5,000 |"
+              },
+              {
+                "id": "glossary.md#s2",
+                "doc": "glossary.md",
+                "score": 0.6547,
+                "text": "Glossary\n## Spread\nThe percentage Verta adds to the mid-market rate on a conversion. The spread\ndepends on the customer tier."
+              },
+              {
+                "id": "fx-guide.md#s2",
+                "doc": "fx-guide.md",
+                "score": 0.603,
+                "text": "Currency conversion guide\n## Reading a quote\nA complete quote lists: mid rate, spread percentage applied, allowance total\nand allowance used before this conversion, gross converted amount, spread\namount, and the final credited amount. The final amount equals the gross\namount minus the spread amount."
+              },
+              {
+                "id": "fx-guide.md#s1",
+                "doc": "fx-guide.md",
+                "score": 0.4851,
+                "text": "Currency conversion guide\n## How a conversion is priced\nA conversion quote has these components, in order: the mid-market rate for the\ncurrency pair; the tier spread (a percentage of the gross converted amount);\nthe free monthly conversion allowance. If the whole conversion fits within the\ncustomer's remaining monthly allowance, no spread is charged. Once the\nallowance is exhausted, the full tier spread applies to the conversion."
+              }
+            ]
+          },
+          "retrieval.query": "tariff FX spread tier1 standard FX spread percentage tier1 tariff FX spread percentage standard spread",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "tariffs.md#s2",
+              "score": 0.6934,
+              "text": "Verta tariff schedule\n## FX spreads by tier\nThe spread is applied over the mid-market rate only after the free monthly\nconversion allowance is exhausted.\n\n| Tie"
+            },
+            {
+              "id": "glossary.md#s2",
+              "score": 0.6547,
+              "text": "Glossary\n## Spread\nThe percentage Verta adds to the mid-market rate on a conversion. The spread\ndepends on the customer tier."
+            },
+            {
+              "id": "fx-guide.md#s2",
+              "score": 0.603,
+              "text": "Currency conversion guide\n## Reading a quote\nA complete quote lists: mid rate, spread percentage applied, allowance total\nand allowance used before this convers"
+            },
+            {
+              "id": "fx-guide.md#s1",
+              "score": 0.4851,
+              "text": "Currency conversion guide\n## How a conversion is priced\nA conversion quote has these components, in order: the mid-market rate for the\ncurrency pair; the tier s"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "cc84e0fc97d846af",
+        "started_at": 1793222182.8030195,
+        "ended_at": 1793222188.5600667,
+        "duration_ms": 5757.0,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2371,
+          "gen_ai.usage.output_tokens": 466
+        },
+        "children": []
+      }
+    ]
+  }
+}

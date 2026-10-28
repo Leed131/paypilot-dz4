@@ -1,0 +1,131 @@
+{
+  "case": "CONV-H05",
+  "run": 3,
+  "turn": 1,
+  "user": "Search Verta documentation: for a purchase where the goods never arrived, which exact dispute reason code applies? Reply with that code only. Do not open a dispute.",
+  "answer": "goods_not_received",
+  "trace": {
+    "request_id": "e6b5f302c8074bce",
+    "name": "agent.request",
+    "span_id": "d01242548b5f4f4b",
+    "started_at": 1793222808.25516,
+    "ended_at": 1793222812.6300588,
+    "duration_ms": 4374.9,
+    "attributes": {
+      "session.id": "7fd6170a86ea",
+      "dialog.step_number": 1,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3333,
+      "gen_ai.usage.total_output_tokens": 300
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "6efa71def302417f",
+        "started_at": 1793222808.2554286,
+        "ended_at": 1793222809.8247344,
+        "duration_ms": 1569.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1443,
+          "gen_ai.usage.output_tokens": 96
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "5a4e22acd51e46d0",
+        "started_at": 1793222809.8248432,
+        "ended_at": 1793222809.8261952,
+        "duration_ms": 1.4,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "purchase where goods never arrived dispute reason code"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "purchase where goods never arrived dispute reason code",
+            "fragments": [
+              {
+                "id": "reason-codes.md#s6",
+                "doc": "reason-codes.md",
+                "score": 1.2005,
+                "text": "Reason code guide\n## Choosing a code\nThe reason code must match what actually happened. A dispute filed under the\nwrong code is declined and must be refiled, which may push it past its window."
+              },
+              {
+                "id": "disputes.md#s1",
+                "doc": "disputes.md",
+                "score": 1.0553,
+                "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
+              },
+              {
+                "id": "disputes-process.md#s3",
+                "doc": "disputes-process.md",
+                "score": 0.9608,
+                "text": "Dispute handling process\n## Provisional credit\nWhere the disputed amount exceeds EUR 50 and the reason code is a fraud code, a\nprovisional credit is applied within two business days. Provisional credit is\nreversed if the dispute is later declined."
+              },
+              {
+                "id": "reason-codes.md#s3",
+                "doc": "reason-codes.md",
+                "score": 0.9285,
+                "text": "Reason code guide\n## duplicate_charge\nUsed when the same purchase was debited more than once. Evidence: references of\nboth transactions. This code carries the shortest window of the purchase codes."
+              }
+            ]
+          },
+          "retrieval.query": "purchase where goods never arrived dispute reason code",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "reason-codes.md#s6",
+              "score": 1.2005,
+              "text": "Reason code guide\n## Choosing a code\nThe reason code must match what actually happened. A dispute filed under the\nwrong code is declined and must be refiled, wh"
+            },
+            {
+              "id": "disputes.md#s1",
+              "score": 1.0553,
+              "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window "
+            },
+            {
+              "id": "disputes-process.md#s3",
+              "score": 0.9608,
+              "text": "Dispute handling process\n## Provisional credit\nWhere the disputed amount exceeds EUR 50 and the reason code is a fraud code, a\nprovisional credit is applied wit"
+            },
+            {
+              "id": "reason-codes.md#s3",
+              "score": 0.9285,
+              "text": "Reason code guide\n## duplicate_charge\nUsed when the same purchase was debited more than once. Evidence: references of\nboth transactions. This code carries the s"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "4a3eda9317734459",
+        "started_at": 1793222809.8263183,
+        "ended_at": 1793222812.6300304,
+        "duration_ms": 2803.7,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1890,
+          "gen_ai.usage.output_tokens": 204
+        },
+        "children": []
+      }
+    ]
+  }
+}

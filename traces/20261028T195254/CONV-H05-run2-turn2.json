@@ -1,0 +1,44 @@
+{
+  "case": "CONV-H05",
+  "run": 2,
+  "turn": 2,
+  "user": "Keep that classification for our conversation. Repeat the exact reason code once more.",
+  "answer": "Acknowledged — I’ve recorded the dispute classification for this conversation.\n\ngoods_not_received",
+  "trace": {
+    "request_id": "ed5b13f05b2b4e8f",
+    "name": "agent.request",
+    "span_id": "a9d1669097b84137",
+    "started_at": 1793219534.055723,
+    "ended_at": 1793219540.8064036,
+    "duration_ms": 6750.7,
+    "attributes": {
+      "session.id": "5e8c61a7f9a9",
+      "dialog.step_number": 2,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 1891,
+      "gen_ai.usage.total_output_tokens": 537
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "6ef8ed245e8d4827",
+        "started_at": 1793219534.0560396,
+        "ended_at": 1793219540.8063872,
+        "duration_ms": 6750.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1891,
+          "gen_ai.usage.output_tokens": 537
+        },
+        "children": []
+      }
+    ]
+  }
+}

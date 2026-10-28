@@ -1,0 +1,47 @@
+{
+  "case": "CONV-H05",
+  "run": 5,
+  "turn": 7,
+  "user": "Repeat the exact reason code you identified at the beginning. Reply with that identifier only.",
+  "answer": "goods_not_received",
+  "trace": {
+    "request_id": "024e0eb0c87c4ff6",
+    "name": "agent.request",
+    "span_id": "c45efb8d832c42e3",
+    "started_at": 1793222971.3301752,
+    "ended_at": 1793222973.8739285,
+    "duration_ms": 2543.8,
+    "attributes": {
+      "session.id": "e3e4a72d234d",
+      "dialog.step_number": 7,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 2821,
+      "gen_ai.usage.total_output_tokens": 204
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "6a8cb7e1238140ca",
+        "started_at": 1793222971.3305984,
+        "ended_at": 1793222973.873906,
+        "duration_ms": 2543.3,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2821,
+          "gen_ai.usage.output_tokens": 204
+        },
+        "children": []
+      }
+    ]
+  }
+}

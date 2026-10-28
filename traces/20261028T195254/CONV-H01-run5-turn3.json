@@ -1,0 +1,137 @@
+{
+  "case": "CONV-H01",
+  "run": 5,
+  "turn": 3,
+  "user": "What is my daily outgoing transfer limit in EUR?",
+  "answer": "I looked up your account and limits.\n\n- Customer: Danylo Kovalenko (CUS-0004), tier1\n- Account: ACC-1005 (EUR)\n\nWhat I checked\n- I retrieved your current transfer limits as of 2026-09-15.\n\nResult\n- Daily outgoing transfer limit (EUR): 5,000\n- Daily remaining (EUR): 5,000\n\nWhat happens next\n- If you'd like, I can explain what counts toward the limit, check a specific transfer against it, or show your monthly limits.",
+  "trace": {
+    "request_id": "dd2878a77ca24919",
+    "name": "agent.request",
+    "span_id": "30956bb276604ed5",
+    "started_at": 1793217634.1179113,
+    "ended_at": 1793217663.5103557,
+    "duration_ms": 29392.4,
+    "attributes": {
+      "session.id": "7ca40dec0127",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 8375,
+      "gen_ai.usage.total_output_tokens": 291
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "af5df4ec415f42b2",
+        "started_at": 1793217634.118137,
+        "ended_at": 1793217657.2091339,
+        "duration_ms": 23091.0,
+        "attributes": {
+          "summary.text": "Summary of support conversation (all concrete details preserved)\n\nCustomer / account\n- Customer ID: CUS-0004\n- Customer name: Danylo Kovalenko\n- Customer tier: tier1\n- Account returned by API:\n  - Account ID: ACC-1005\n  - customer_id: CUS-0004\n  - Currency: EUR\n  - Balance: 1310.2\n  - Tier: tier1\n  - Holder: Danylo Kovalenko\n\nTransactions retrieved (full list returned)\n- TX-0401\n  - account_id: ACC-1005\n  - date: 2026-07-20\n  - amount: 240.00 EUR\n  - merchant: TechMart Online\n  - direction: out\n  - transfer_type: card\n  - status: settled\n- TX-0402\n  - account_id: ACC-1005\n  - date: 2026-07-14\n  - amount: 240.00 EUR\n  - merchant: TechMart Online\n  - direction: out\n  - transfer_type: card\n  - status: settled\n- TX-0403\n  - account_id: ACC-1005\n  - date: 2026-09-01\n  - amount: 35.50 EUR\n  - merchant: CityParking\n  - direction: out\n  - transfer_type: card\n  - status: settled\n\nCustomer's request(s) / instructions\n- Initial user message: \"I'm CUS-0004. Transaction TX-0401, 240.00 EUR: the goods never arrived. Which reason code applies? State the transaction ID and amount too. Do not open a dispute.\"\n- Follow-up user message: \"Can I dispute it? Use the official eligibility tool for that transaction and reason. State the transaction date, filing window in days, deadline, reason code and amount. Do not open a dispute.\"\n- Explicit user instruction (twice): Do not open a dispute.\n\nKB search results (exact fragments returned)\n- disputes.md (Payment dispute rules — Reason codes and chargeback windows)\n  - Table (reason code → window in days):\n    - fraud_card_not_present: 120 days\n    - goods_not_received: 90 days\n    - duplicate_charge: 60 days\n    - service_not_rendered: 90 days\n    - unauthorized_debit: 56 days\n  - Note: \"Each reason code has a window in days from the transaction date. A dispute opened after the window closes is not eligible.\"\n- reason-codes.md (Reason code guide)\n  - Note: \"The reason code must match what actually happened. A dispute filed under the wrong code is declined and must be refiled, which may push it past its window.\"\n  - unauthorized_debit: used for a direct debit the customer never mandated; carries the shortest window overall.\n- disputes-process.md (Withdrawing a dispute)\n  - Note: \"A customer may withdraw a dispute at any time before resolution. Withdrawal is final; the same transaction cannot be disputed again under the same reason code.\"\n\nInitial assistant findings (based on KB + account/transactions)\n- Transaction identified: TX-0401\n- Amount: 240.00 EUR\n- Merchant/date/status: TechMart Online — 2026-07-20 — settled\n- Applicable reason code (from KB): goods_not_received (used when goods never arrived)\n- KB policy: goods_not_received has a 90-day dispute window from transaction date\n- Assistant computed: TX-0401 dated 2026-07-20 is 100 days before 2026-10-28 (current date), so it \"appeared\" to be outside the 90-day window (this was an initial observation prior to running the official eligibility tool)\n\nOfficial eligibility tool run (user asked specifically to run tool; tool output preserved)\n- Tool used: check_dispute_eligibility for TX-0401 with reason_code = goods_not_received\n- Tool output (exact):\n  - eligible: true\n  - reason_code: goods_not_received\n  - window_days: 90\n  - tx_date: 2026-07-20\n  - as_of: 2026-09-15\n  - deadline: 2026-10-18\n  - checks:\n    - reason_code: pass\n    - tx_status: pass\n    - window: pass\n    - compliance_hold: pass\n- Fields explicitly requested by user and returned by tool:\n  - Transaction date: 2026-07-20\n  - Filing window in days: 90\n  - Deadline returned by tool: 2026-10-18\n  - Reason code: goods_not_received\n  - Amount: 240.00 EUR\n  - Eligibility: eligible = true\n  - as_of timestamp for the eligibility check: 2026-09-15\n\nCommitments / next actions recorded\n- User instruction (explicit): \"Do not open a dispute.\" — honored.\n- Assistant committed: Did not open a dispute. Stated it will not open a dispute unless the user confirms they want it opened.\n- Assistant offered: If the user confirms, the assistant will open the dispute (but no opening was performed).\n\nNotes / potential points an agent continuing should be aware of\n- There is a discrepancy between the assistant's initial date-based check (noted relative to 2026-10-28: 100 days since 2026-07-20 → appeared outside 90-day window) and the official eligibility tool output (as_of 2026-09-15) which returned eligible=true and a deadline of 2026-10-18. Both pieces of information are preserved here; do not assume one over the other without further verification of the correct \"as_of\" context and whether eligibility has changed since 2026-09-15.\n- KB guidance warns about choosing the correct reason code (wrong code → declined → refile may push past window).\n- KB guidance about withdrawals: withdrawing is final and prevents re-filing under same reason code.\n\nActions available to continue (explicit, based on prior dialog)\n- Confirm with customer whether to open the dispute for TX-0401 under reason_code goods_not_received (assistant is waiting for user confirmation).\n- If opening a dispute, consider: use reason_code = goods_not_received, amount = 240.00 EUR, account = ACC-1005, customer = CUS-0004.\n- If re-checking eligibility, ensure the eligibility tool is run with current \"as_of\" date so the returned deadline and eligibility are up-to-date.\n\nEnd of summary.",
+          "summary.replaced_messages": 12
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "7c8d3ca70bee4c3a",
+        "started_at": 1793217657.2092478,
+        "ended_at": 1793217659.971657,
+        "duration_ms": 2762.4,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2680,
+          "gen_ai.usage.output_tokens": 147
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "2329810d93944510",
+        "started_at": 1793217659.9717627,
+        "ended_at": 1793217659.9729404,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {},
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "abf9a42296214cc0",
+        "started_at": 1793217659.9730957,
+        "ended_at": 1793217661.6596956,
+        "duration_ms": 1686.6,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2790,
+          "gen_ai.usage.output_tokens": 27
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_limits",
+        "span_id": "f33c2c0478ea47d8",
+        "started_at": 1793217661.6598608,
+        "ended_at": 1793217661.6612172,
+        "duration_ms": 1.4,
+        "attributes": {
+          "tool.name": "check_limits",
+          "tool.arguments": {
+            "customer_id": "CUS-0004"
+          },
+          "tool.result": {
+            "tier": "tier1",
+            "as_of": "2026-09-15",
+            "daily_limit_eur": 5000,
+            "daily_spent_eur": 0,
+            "daily_remaining_eur": 5000,
+            "monthly_limit_eur": 50000,
+            "monthly_spent_eur": 35.5,
+            "monthly_remaining_eur": 49964.5
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "edb30c4a795c4395",
+        "started_at": 1793217661.661302,
+        "ended_at": 1793217663.5103292,
+        "duration_ms": 1849.0,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2905,
+          "gen_ai.usage.output_tokens": 117
+        },
+        "children": []
+      }
+    ]
+  }
+}

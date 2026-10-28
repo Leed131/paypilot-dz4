@@ -1,0 +1,44 @@
+{
+  "case": "CONV-H03",
+  "run": 5,
+  "turn": 6,
+  "user": "240 euro, as I said at the start.",
+  "answer": "What I did\n- I reviewed the transaction details we already pulled (no new actions).\n\nWhat I found (exact)\n- Transaction ID: TX-0401\n- Amount: 240.00 EUR\n- Reason code: goods_not_received\n\nWhat happens next\n- Per your instruction, I will not open a dispute now.\n- Options you can pick:\n  - I can open the dispute later (eligibility confirmed; filing deadline 2026-10-18).\n  - I can send an account statement for the period to the email on file.\n  - I can escalate to a human agent if you want direct assistance.\n\nTell me which option you want me to take, or if you prefer to do nothing for now.",
+  "trace": {
+    "request_id": "71f25c1977a1419e",
+    "name": "agent.request",
+    "span_id": "9ea405a7ccea4d92",
+    "started_at": 1793218847.2546382,
+    "ended_at": 1793218852.6683862,
+    "duration_ms": 5413.7,
+    "attributes": {
+      "session.id": "51b7c99ad8df",
+      "dialog.step_number": 6,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3095,
+      "gen_ai.usage.total_output_tokens": 541
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "c1313db39e8946ab",
+        "started_at": 1793218847.254876,
+        "ended_at": 1793218852.6683621,
+        "duration_ms": 5413.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 3095,
+          "gen_ai.usage.output_tokens": 541
+        },
+        "children": []
+      }
+    ]
+  }
+}

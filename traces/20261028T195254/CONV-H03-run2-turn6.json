@@ -1,0 +1,44 @@
+{
+  "case": "CONV-H03",
+  "run": 2,
+  "turn": 6,
+  "user": "240 euro, as I said at the start.",
+  "answer": "Acknowledged — I confirm the amount.\n\nWhat I did\n- Reviewed the transaction details we have on file.\n\nWhat I found (confirmed)\n- Transaction ID: TX-0401\n- Amount: 240.00 EUR (confirmed)\n- Reason code: goods_not_received\n- Filing deadline (if you later choose to dispute): 2026-10-18\n\nWhat happens next\n- I will not open a dispute unless you explicitly tell me to.\n- You can: 1) contact the merchant for a refund; 2) ask me to prepare a checklist of evidence to gather; 3) ask me to open the dispute now (with your confirmation); or 4) escalate to a human agent to handle it.\n\nWhich of those would you like me to do?",
+  "trace": {
+    "request_id": "46b5d7fcd8884da0",
+    "name": "agent.request",
+    "span_id": "ea330c2bac064d33",
+    "started_at": 1793218406.5364668,
+    "ended_at": 1793218411.3331008,
+    "duration_ms": 4796.6,
+    "attributes": {
+      "session.id": "50bcd6668676",
+      "dialog.step_number": 6,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4059,
+      "gen_ai.usage.total_output_tokens": 424
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "85ab5a0f6afc4b4c",
+        "started_at": 1793218406.5366628,
+        "ended_at": 1793218411.3330717,
+        "duration_ms": 4796.4,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 4059,
+          "gen_ai.usage.output_tokens": 424
+        },
+        "children": []
+      }
+    ]
+  }
+}

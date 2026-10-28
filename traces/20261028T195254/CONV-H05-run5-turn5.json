@@ -1,0 +1,44 @@
+{
+  "case": "CONV-H05",
+  "run": 5,
+  "turn": 5,
+  "user": "Back to the earlier purchase. Which exact reason code did you identify? Reply with the identifier only. Do not open any dispute.",
+  "answer": "goods_not_received",
+  "trace": {
+    "request_id": "eb86dd5145554b4d",
+    "name": "agent.request",
+    "span_id": "9c1e65e014af4536",
+    "started_at": 1793219840.4384243,
+    "ended_at": 1793219845.924236,
+    "duration_ms": 5485.8,
+    "attributes": {
+      "session.id": "190ba256aa1a",
+      "dialog.step_number": 5,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3207,
+      "gen_ai.usage.total_output_tokens": 332
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "122efff913ab4353",
+        "started_at": 1793219840.4386148,
+        "ended_at": 1793219845.9242249,
+        "duration_ms": 5485.6,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 3207,
+          "gen_ai.usage.output_tokens": 332
+        },
+        "children": []
+      }
+    ]
+  }
+}

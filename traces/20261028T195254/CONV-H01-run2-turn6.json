@@ -1,0 +1,44 @@
+{
+  "case": "CONV-H01",
+  "run": 2,
+  "turn": 6,
+  "user": "240 euro, as I said at the start.",
+  "answer": "What I did\n- Reviewed your account (ACC-1005) and the prior eligibility check for the charge.\n\nWhat I found\n- Transaction ID: TX-0401\n- Amount: 240.00 EUR\n- Reason code checked: goods_not_received\n- Eligibility (as of 2026-09-15): eligible — filing window 90 days, deadline to file: 2026-10-18 (all checks passed)\n\nWhat happens next\n- I will not open a dispute now, as you requested.\n- Tell me which of these you want next:\n  1) Guidance to contact the merchant (I’ll list the exact information and documents to include).  \n  2) I can prepare to file the dispute later — if and when you ask me to proceed I will re-run the eligibility check and then file for 240.00 EUR (confirm whether TX-0402 should be included then).  \n  3) Something else (specify).\n\nWhich option would you like?",
+  "trace": {
+    "request_id": "7e759c36293047ad",
+    "name": "agent.request",
+    "span_id": "6f7bb46dfd634f69",
+    "started_at": 1793217358.935536,
+    "ended_at": 1793217368.0760546,
+    "duration_ms": 9140.5,
+    "attributes": {
+      "session.id": "368ce649268f",
+      "dialog.step_number": 6,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3521,
+      "gen_ai.usage.total_output_tokens": 983
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "f0a402a9cf554d1f",
+        "started_at": 1793217358.9357765,
+        "ended_at": 1793217368.076001,
+        "duration_ms": 9140.2,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 3521,
+          "gen_ai.usage.output_tokens": 983
+        },
+        "children": []
+      }
+    ]
+  }
+}

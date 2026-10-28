@@ -1,0 +1,128 @@
+{
+  "case": "CONV-H03",
+  "run": 4,
+  "turn": 8,
+  "user": "Which currency is used for SEPA transfers?",
+  "answer": "What I did: Searched our documentation for SEPA transfer details.\n\nWhat I found: SEPA transfers are for euro-area banks and use euros (EUR). The docs note SEPA transfers reach euro-area banks within one business day.\n\nWhat happens next: If you want to make a SEPA transfer or need the exact fee and cut-off for your account, tell me the amount and beneficiary and I’ll check the specifics.",
+  "trace": {
+    "request_id": "f1e6b84dabf747f6",
+    "name": "agent.request",
+    "span_id": "bd88c903d61b4539",
+    "started_at": 1793218728.5720077,
+    "ended_at": 1793218735.791318,
+    "duration_ms": 7219.3,
+    "attributes": {
+      "session.id": "724b652b67d1",
+      "dialog.step_number": 8,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 8923,
+      "gen_ai.usage.total_output_tokens": 518
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "b705115a7e6c4207",
+        "started_at": 1793218728.572243,
+        "ended_at": 1793218730.332003,
+        "duration_ms": 1759.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 4266,
+          "gen_ai.usage.output_tokens": 40
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "ccd8431a23ca4f5a",
+        "started_at": 1793218730.3320959,
+        "ended_at": 1793218730.333396,
+        "duration_ms": 1.3,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "SEPA currency used for SEPA transfers euro currency which currency SEPA transfers use"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "SEPA currency used for SEPA transfers euro currency which currency SEPA transfers use",
+            "fragments": [
+              {
+                "id": "transfers.md#s1",
+                "doc": "transfers.md",
+                "score": 1.1795,
+                "text": "Transfers\n## Transfer types\nInternal transfers move funds between Verta accounts and settle instantly.\nSEPA transfers reach euro-area banks within one business day. SWIFT transfers\nare used for other destinations and settle in one to five business days. Card\npayments are outgoing payments to a merchant."
+              },
+              {
+                "id": "transfers.md#s2",
+                "doc": "transfers.md",
+                "score": 0.8333,
+                "text": "Transfers\n## Cut-off times\nSEPA transfers submitted after 16:00 CET are processed the next business day.\nSWIFT transfers submitted after 14:00 CET are processed the next business day.\nInternal transfers have no cut-off."
+              },
+              {
+                "id": "cards.md#s6",
+                "doc": "cards.md",
+                "score": 0.8,
+                "text": "Cards\n## Foreign use\nA card used abroad in a currency other than the account currency triggers a\nconversion at settlement under the standard tier spread."
+              },
+              {
+                "id": "fx-guide.md#s3",
+                "doc": "fx-guide.md",
+                "score": 0.6547,
+                "text": "Currency conversion guide\n## Supported currencies\nEUR (base), USD, GBP, PLN, CHF and UAH. Rates for the stand are frozen for\nreproducibility."
+              }
+            ]
+          },
+          "retrieval.query": "SEPA currency used for SEPA transfers euro currency which currency SEPA transfers use",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "transfers.md#s1",
+              "score": 1.1795,
+              "text": "Transfers\n## Transfer types\nInternal transfers move funds between Verta accounts and settle instantly.\nSEPA transfers reach euro-area banks within one business "
+            },
+            {
+              "id": "transfers.md#s2",
+              "score": 0.8333,
+              "text": "Transfers\n## Cut-off times\nSEPA transfers submitted after 16:00 CET are processed the next business day.\nSWIFT transfers submitted after 14:00 CET are processed"
+            },
+            {
+              "id": "cards.md#s6",
+              "score": 0.8,
+              "text": "Cards\n## Foreign use\nA card used abroad in a currency other than the account currency triggers a\nconversion at settlement under the standard tier spread."
+            },
+            {
+              "id": "fx-guide.md#s3",
+              "score": 0.6547,
+              "text": "Currency conversion guide\n## Supported currencies\nEUR (base), USD, GBP, PLN, CHF and UAH. Rates for the stand are frozen for\nreproducibility."
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "2d1fc3f9909c43c6",
+        "started_at": 1793218730.3335,
+        "ended_at": 1793218735.7912765,
+        "duration_ms": 5457.8,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 4657,
+          "gen_ai.usage.output_tokens": 478
+        },
+        "children": []
+      }
+    ]
+  }
+}

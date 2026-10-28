@@ -1,0 +1,128 @@
+{
+  "case": "CONV-H03",
+  "run": 1,
+  "turn": 7,
+  "user": "A separate general question: what is a SEPA transfer?",
+  "answer": "What I did\n- Checked Verta’s knowledge base on transfer types.\n\nWhat I found\n- A SEPA transfer is Verta’s transfer type for euro-area banks. SEPA transfers reach euro-area banks within one business day.  \n- For comparison, SWIFT is used for non-euro-area destinations and typically settles in one to five business days.\n\nWhat happens next\n- If you want to send a SEPA transfer, tell me the account, beneficiary and amount and I’ll check your limits and help you prepare the payment.",
+  "trace": {
+    "request_id": "028e8a834c87409f",
+    "name": "agent.request",
+    "span_id": "0cfe6ba983e24f40",
+    "started_at": 1793218256.2169666,
+    "ended_at": 1793218268.382304,
+    "duration_ms": 12165.3,
+    "attributes": {
+      "session.id": "628663ce251e",
+      "dialog.step_number": 7,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 8811,
+      "gen_ai.usage.total_output_tokens": 1001
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "6c397254dbfe45fe",
+        "started_at": 1793218256.2172143,
+        "ended_at": 1793218258.654963,
+        "duration_ms": 2437.7,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 4180,
+          "gen_ai.usage.output_tokens": 180
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "4881aec6dd204f9b",
+        "started_at": 1793218258.6551113,
+        "ended_at": 1793218258.6567283,
+        "duration_ms": 1.6,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "SEPA transfer definition what is a SEPA transfer euro zone single euro payments area SEPA definition 'SEPA transfer' 'SEPA'"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "SEPA transfer definition what is a SEPA transfer euro zone single euro payments area SEPA definition 'SEPA transfer' 'SEPA'",
+            "fragments": [
+              {
+                "id": "disputes-process.md#s1",
+                "doc": "disputes-process.md",
+                "score": 1.1429,
+                "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a reason code. The agent verifies eligibility\nbefore the case is opened; an ineligible request is refused with the failing\ncondition named, except where confidentiality rules apply."
+              },
+              {
+                "id": "limits-operations.md#s2",
+                "doc": "limits-operations.md",
+                "score": 1.1339,
+                "text": "Limit operations\n## Temporary limit increases\nA customer may request a temporary increase for a single transfer. Increases\nare approved by a human agent and expire after 24 hours."
+              },
+              {
+                "id": "transfers.md#s1",
+                "doc": "transfers.md",
+                "score": 1.0321,
+                "text": "Transfers\n## Transfer types\nInternal transfers move funds between Verta accounts and settle instantly.\nSEPA transfers reach euro-area banks within one business day. SWIFT transfers\nare used for other destinations and settle in one to five business days. Card\npayments are outgoing payments to a merchant."
+              },
+              {
+                "id": "transfers.md#s5",
+                "doc": "transfers.md",
+                "score": 1.029,
+                "text": "Transfers\n## Recalls\nA customer may request a recall of a sent transfer. Recalls are best-effort:\nthe beneficiary bank is not obliged to return the funds. Recall requests are\nhandled by a human agent."
+              }
+            ]
+          },
+          "retrieval.query": "SEPA transfer definition what is a SEPA transfer euro zone single euro payments area SEPA definition 'SEPA transfer' 'SEPA'",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes-process.md#s1",
+              "score": 1.1429,
+              "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a re"
+            },
+            {
+              "id": "limits-operations.md#s2",
+              "score": 1.1339,
+              "text": "Limit operations\n## Temporary limit increases\nA customer may request a temporary increase for a single transfer. Increases\nare approved by a human agent and exp"
+            },
+            {
+              "id": "transfers.md#s1",
+              "score": 1.0321,
+              "text": "Transfers\n## Transfer types\nInternal transfers move funds between Verta accounts and settle instantly.\nSEPA transfers reach euro-area banks within one business "
+            },
+            {
+              "id": "transfers.md#s5",
+              "score": 1.029,
+              "text": "Transfers\n## Recalls\nA customer may request a recall of a sent transfer. Recalls are best-effort:\nthe beneficiary bank is not obliged to return the funds. Recal"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "59aa62b9c2c7477c",
+        "started_at": 1793218258.6568367,
+        "ended_at": 1793218268.3822474,
+        "duration_ms": 9725.4,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 4631,
+          "gen_ai.usage.output_tokens": 821
+        },
+        "children": []
+      }
+    ]
+  }
+}
