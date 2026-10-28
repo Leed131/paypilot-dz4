@@ -1,0 +1,56 @@
+{
+  "case": "MEM-001-AMT",
+  "run": 1,
+  "turn": 3,
+  "user": "And what are the typical timelines?",
+  "answer": "What I did\n- Opened dispute ID 1 for TX-0401 and queued a human review (escalation queued).\n\nWhat I found (typical timelines)\n- Card reason codes: review target 10 business days.  \n- Transfer reason codes: review target 20 business days.  \n- Complex cases (for example, involvement of a foreign acquirer) can run up to 45 calendar days; we will notify you if the timeline is extended.  \n- If we request supporting evidence, you will have 7 calendar days to supply it; failure to provide requested evidence within that window may result in the case being declined.\n\nWhat happens next\n- A human agent will pick up escalation_id 1, confirm whether the card or transfer timeline applies to TX-0401, and contact you by the email on file if they need evidence or additional information.  \n- If you want to add evidence now or withdraw the dispute while it’s open, tell me and I will take that action on your behalf.",
+  "trace": {
+    "request_id": "5322c1af2cda432b",
+    "name": "agent.request",
+    "span_id": "f6ff56b46a1f4d5a",
+    "started_at": 1793210358.9211462,
+    "ended_at": 1793210378.4325163,
+    "duration_ms": 19511.4,
+    "attributes": {
+      "session.id": "b8d124759ebf",
+      "dialog.step_number": 3,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 2091,
+      "gen_ai.usage.total_output_tokens": 918
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "2dc5a9f2da284eb3",
+        "started_at": 1793210358.921238,
+        "ended_at": 1793210370.8912873,
+        "duration_ms": 11970.0,
+        "attributes": {
+          "summary.text": "Summary of conversation and current case state (for follow-up)\n\nCustomer and account\n- Customer ID: CUS-0004\n- Customer name: Danylo Kovalenko\n- Customer tier: tier1\n- Primary account used: ACC-1005\n  - Account ID: ACC-1005\n  - Customer_id: CUS-0004\n  - Currency: EUR\n  - Balance: 1310.2\n  - Tier: tier1\n  - Holder: Danylo Kovalenko\n\nCustomer request\n- Customer asked: \"Please open a dispute for transaction TX-0401 with reason code duplicate_charge, amount 240.00 EUR.\"\n\nTransaction and eligibility check\n- Transaction ID: TX-0401\n- Dispute reason_code requested: duplicate_charge\n- Amount to dispute: 240.00 EUR\n- Eligibility check result: eligible: true\n- Eligibility details:\n  - reason_code: duplicate_charge (check: pass)\n  - tx_status: pass\n  - window: pass\n  - compliance_hold: pass\n  - window_days: 60\n  - tx_date: 2026-07-20\n  - as_of (eligibility evaluated): 2026-09-15\n  - dispute deadline (window expiration): 2026-09-18\n\nActions taken by assistant/tools\n- Created dispute:\n  - create_dispute returned: dispute_id: 1, status: open\n  - Dispute ID: 1, Status: open\n- Escalation to human:\n  - escalate_to_human returned: escalation_id: 1, status: queued\n  - Escalation ID: 1, Status: queued\n- Verified customer/account (see above)\n\nKnowledge-base / process notes provided to customer (retain for agent reference)\n- Case states: open → under_review → provisional_credit → resolved_upheld or resolved_declined.\n- Evidence requirements: customer may be asked for supporting evidence (order confirmation, delivery record, correspondence with merchant). If requested, failure to supply requested evidence within 7 calendar days results in the case being declined.\n- Withdrawal: customer may withdraw a dispute any time while it is open or under_review. Withdrawal is final; same transaction cannot be disputed again under the same reason code.\n- Timelines: review target is 10 business days for card reason codes and 20 business days for transfer reason codes. Complex cases (foreign acquirer involvement) may run up to 45 calendar days; customer will be notified if extended.\n\nCommunications / commitments\n- The dispute is open (Dispute ID 1). A human agent will review the case (escalation queued).\n- The assistant committed that a human agent will contact the customer if more information is needed.\n- Official correspondence and any evidence requests will be sent to the email address registered on the customer’s account.\n- The assistant offered options to the customer: (a) add evidence now, (b) cancel/withdraw the dispute while it’s open, or (c) confirm which timeline applies once the agent begins review.\n\nPending items / next steps for support agent\n- Human agent to pick up escalation_id 1 (queued) and begin review of dispute_id 1 for TX-0401.\n- Confirm whether the dispute requires evidence; if so, request evidence from customer and note the 7-calendar-day deadline to avoid automatic decline.\n- Verify whether this is a card or transfer reason code to apply correct review timeline (10 business days for card, 20 for transfer); consider potential for extended timeline (up to 45 days) if foreign acquirer involved and notify customer if extended.\n- Use customer email on file for all communications.\n- If customer responds with any of the offered options (add evidence now, withdraw, request timeline confirmation), process accordingly.\n\nAll concrete IDs, amounts, currencies, dates, and statuses are captured above.",
+          "summary.replaced_messages": 14
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "c0e1107306204f74",
+        "started_at": 1793210370.8913856,
+        "ended_at": 1793210378.4324925,
+        "duration_ms": 7541.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2091,
+          "gen_ai.usage.output_tokens": 918
+        },
+        "children": []
+      }
+    ]
+  }
+}

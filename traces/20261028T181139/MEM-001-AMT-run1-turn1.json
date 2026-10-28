@@ -1,0 +1,201 @@
+{
+  "case": "MEM-001-AMT",
+  "run": 1,
+  "turn": 1,
+  "user": "I'm CUS-0004. Please open a dispute for transaction TX-0401 with reason code duplicate_charge, amount 240.00 EUR.",
+  "answer": "What I did\n- Verified your customer record and account (CUS-0004 / ACC-1005).\n- Checked dispute eligibility for TX-0401 under reason duplicate_charge — it’s eligible.\n- Opened the dispute for TX-0401 for 240.00 EUR.\n- Escalated this case to a human agent for further review.\n\nWhat I found\n- Dispute ID: 1\n- Dispute status: open\n- Transaction date on record: 2026-07-20\n- Dispute window: eligible until 2026-09-18\n\nWhat happens next\n- A human agent has been assigned and the case is queued for review.\n- We’ll notify you at the email address registered on your account with updates and any requests for more information.\n- If you need anything else now (additional details to include in the dispute, or a different reason/amount), tell me and I will update the case.",
+  "trace": {
+    "request_id": "49e56ade73e145c6",
+    "name": "agent.request",
+    "span_id": "6500133854094ca5",
+    "started_at": 1793211222.1412687,
+    "ended_at": 1793211242.9812443,
+    "duration_ms": 20840.0,
+    "attributes": {
+      "session.id": "6779b3aad708",
+      "dialog.step_number": 1,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 8249,
+      "gen_ai.usage.total_output_tokens": 1118
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "1ec94bd8d288438b",
+        "started_at": 1793211222.1415472,
+        "ended_at": 1793211228.8889399,
+        "duration_ms": 6747.4,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1440,
+          "gen_ai.usage.output_tokens": 339
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "38fd3379b8cc4bf2",
+        "started_at": 1793211228.889,
+        "ended_at": 1793211228.889793,
+        "duration_ms": 0.8,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {},
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "7af30cb96dd54721",
+        "started_at": 1793211228.8898718,
+        "ended_at": 1793211232.1071422,
+        "duration_ms": 3217.3,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1550,
+          "gen_ai.usage.output_tokens": 165
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_dispute_eligibility",
+        "span_id": "b1cf36c260f34d71",
+        "started_at": 1793211232.1073534,
+        "ended_at": 1793211232.1087964,
+        "duration_ms": 1.4,
+        "attributes": {
+          "tool.name": "check_dispute_eligibility",
+          "tool.arguments": {
+            "transaction_id": "TX-0401",
+            "reason_code": "duplicate_charge"
+          },
+          "tool.result": {
+            "eligible": true,
+            "reason_code": "duplicate_charge",
+            "window_days": 60,
+            "tx_date": "2026-07-20",
+            "as_of": "2026-09-15",
+            "deadline": "2026-09-18",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "a7a643312f3e4b35",
+        "started_at": 1793211232.1088698,
+        "ended_at": 1793211238.450266,
+        "duration_ms": 6341.4,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1682,
+          "gen_ai.usage.output_tokens": 364
+        },
+        "children": []
+      },
+      {
+        "name": "tool.create_dispute",
+        "span_id": "dd939d72939847b1",
+        "started_at": 1793211238.4503953,
+        "ended_at": 1793211238.4572043,
+        "duration_ms": 6.8,
+        "attributes": {
+          "tool.name": "create_dispute",
+          "tool.arguments": {
+            "transaction_id": "TX-0401",
+            "reason_code": "duplicate_charge",
+            "amount": 240.0,
+            "currency": "EUR"
+          },
+          "tool.result": {
+            "dispute_id": 1,
+            "status": "open"
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "ebb432df1cf14213",
+        "started_at": 1793211238.457331,
+        "ended_at": 1793211239.8952808,
+        "duration_ms": 1437.9,
+        "attributes": {
+          "agent.loop_step": 3,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1746,
+          "gen_ai.usage.output_tokens": 55
+        },
+        "children": []
+      },
+      {
+        "name": "tool.escalate_to_human",
+        "span_id": "af28a4733c1b416b",
+        "started_at": 1793211239.895418,
+        "ended_at": 1793211239.9013312,
+        "duration_ms": 5.9,
+        "attributes": {
+          "tool.name": "escalate_to_human",
+          "tool.arguments": {
+            "customer_id": "CUS-0004",
+            "reason": "Customer requested dispute for TX-0401 (duplicate_charge). Escalation per policy: customer requested human or dispute involves other handling."
+          },
+          "tool.result": {
+            "escalation_id": 1,
+            "status": "queued"
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "2dcadd92d1d24f63",
+        "started_at": 1793211239.9014294,
+        "ended_at": 1793211242.981217,
+        "duration_ms": 3079.8,
+        "attributes": {
+          "agent.loop_step": 4,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1831,
+          "gen_ai.usage.output_tokens": 195
+        },
+        "children": []
+      }
+    ]
+  }
+}

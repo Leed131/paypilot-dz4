@@ -1,0 +1,224 @@
+{
+  "case": "CONV-002",
+  "run": 1,
+  "turn": 6,
+  "user": "240 euro, as I said at the start.",
+  "answer": "What I did\n- I re-checked your recent transactions and located the two EUR 240 charges at TechMart Online. I re-ran the dispute eligibility check for TX-0401 (2026-07-20) under \"service_not_rendered\" and it is eligible.\n\nWhat I found\n- Transaction selected for dispute: TX-0401, TechMart Online, EUR 240, date 2026-07-20, status: settled.\n- Eligibility: eligible for \"service_not_rendered\", dispute window open until 2026-10-18.\n\nWhat I did next\n- I opened the dispute on your behalf for TX-0401 for EUR 240 — dispute ID 1, status open.\n- I escalated this case to a human agent and the escalation is queued.\n\nWhat happens next\n- The dispute is open. Verta will investigate and contact the merchant and relevant networks as needed. A human agent will review your case from the escalation queue and may reach out if they need more information or documentation.\n- If you have any supporting documents (receipts, order confirmations, correspondence with the merchant), reply here and I will attach them to the dispute for the investigation team.",
+  "trace": {
+    "request_id": "7b7a3bb49cd14e4f",
+    "name": "agent.request",
+    "span_id": "ec19bff5b7ff4acb",
+    "started_at": 1793213155.4180093,
+    "ended_at": 1793213178.85965,
+    "duration_ms": 23441.6,
+    "attributes": {
+      "session.id": "792ad6c7bdc6",
+      "dialog.step_number": 6,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 15414,
+      "gen_ai.usage.total_output_tokens": 1749
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "28bbbf9f5bee4845",
+        "started_at": 1793213155.4182074,
+        "ended_at": 1793213161.6607227,
+        "duration_ms": 6242.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2757,
+          "gen_ai.usage.output_tokens": 479
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_transactions",
+        "span_id": "a12dadf0464d4208",
+        "started_at": 1793213161.6609137,
+        "ended_at": 1793213161.6621215,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "get_transactions",
+          "tool.arguments": {
+            "account_id": "ACC-1005",
+            "limit": 50
+          },
+          "tool.result": {
+            "transactions": [
+              {
+                "id": "TX-0403",
+                "account_id": "ACC-1005",
+                "date": "2026-09-01",
+                "amount": 35.5,
+                "currency": "EUR",
+                "merchant": "CityParking",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              },
+              {
+                "id": "TX-0401",
+                "account_id": "ACC-1005",
+                "date": "2026-07-20",
+                "amount": 240.0,
+                "currency": "EUR",
+                "merchant": "TechMart Online",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              },
+              {
+                "id": "TX-0402",
+                "account_id": "ACC-1005",
+                "date": "2026-07-14",
+                "amount": 240.0,
+                "currency": "EUR",
+                "merchant": "TechMart Online",
+                "direction": "out",
+                "transfer_type": "card",
+                "status": "settled"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "058bd7a0fde24f89",
+        "started_at": 1793213161.6622274,
+        "ended_at": 1793213168.5368018,
+        "duration_ms": 6874.6,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 3012,
+          "gen_ai.usage.output_tokens": 615
+        },
+        "children": []
+      },
+      {
+        "name": "tool.check_dispute_eligibility",
+        "span_id": "67df30b1cab94f9a",
+        "started_at": 1793213168.5369048,
+        "ended_at": 1793213168.5383484,
+        "duration_ms": 1.4,
+        "attributes": {
+          "tool.name": "check_dispute_eligibility",
+          "tool.arguments": {
+            "transaction_id": "TX-0401",
+            "reason_code": "service_not_rendered"
+          },
+          "tool.result": {
+            "eligible": true,
+            "reason_code": "service_not_rendered",
+            "window_days": 90,
+            "tx_date": "2026-07-20",
+            "as_of": "2026-09-15",
+            "deadline": "2026-10-18",
+            "checks": {
+              "reason_code": "pass",
+              "tx_status": "pass",
+              "window": "pass",
+              "compliance_hold": "pass"
+            }
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "a012b94f6afa4724",
+        "started_at": 1793213168.538431,
+        "ended_at": 1793213173.4409811,
+        "duration_ms": 4902.6,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 3148,
+          "gen_ai.usage.output_tokens": 364
+        },
+        "children": []
+      },
+      {
+        "name": "tool.create_dispute",
+        "span_id": "809d9ecc89d641ce",
+        "started_at": 1793213173.4410846,
+        "ended_at": 1793213173.4500484,
+        "duration_ms": 9.0,
+        "attributes": {
+          "tool.name": "create_dispute",
+          "tool.arguments": {
+            "transaction_id": "TX-0401",
+            "reason_code": "service_not_rendered",
+            "amount": 240,
+            "currency": "EUR"
+          },
+          "tool.result": {
+            "dispute_id": 1,
+            "status": "open"
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "9d5a77c5815f413a",
+        "started_at": 1793213173.4501836,
+        "ended_at": 1793213175.1150658,
+        "duration_ms": 1664.9,
+        "attributes": {
+          "agent.loop_step": 3,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 3212,
+          "gen_ai.usage.output_tokens": 43
+        },
+        "children": []
+      },
+      {
+        "name": "tool.escalate_to_human",
+        "span_id": "287c1cca74514ea9",
+        "started_at": 1793213175.115153,
+        "ended_at": 1793213175.121094,
+        "duration_ms": 5.9,
+        "attributes": {
+          "tool.name": "escalate_to_human",
+          "tool.arguments": {
+            "customer_id": "CUS-0004",
+            "reason": "Customer requested human earlier in conversation summary; escalate before finalising per policy."
+          },
+          "tool.result": {
+            "escalation_id": 1,
+            "status": "queued"
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "166a0bfe224b4787",
+        "started_at": 1793213175.121203,
+        "ended_at": 1793213178.8596308,
+        "duration_ms": 3738.4,
+        "attributes": {
+          "agent.loop_step": 4,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 3285,
+          "gen_ai.usage.output_tokens": 248
+        },
+        "children": []
+      }
+    ]
+  }
+}

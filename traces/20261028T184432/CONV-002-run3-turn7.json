@@ -1,0 +1,47 @@
+{
+  "case": "CONV-002",
+  "run": 3,
+  "turn": 7,
+  "user": "And I still have time to file, right?",
+  "answer": "Yes — when I checked the transaction was still inside the 90‑day dispute window. The eligibility check showed a 90‑day window with a deadline of 2026‑10‑18, and I have already opened the dispute (Dispute ID 1) for the €240 TechMart charge.\n\nWhat happens next\n- A confirmation will be sent to the email on file.  \n- The disputes team may request supporting documents (order confirmation, communications, tracking) — I’ll notify you here if they ask.  \n- If you want to add documents now, tell me which files to attach and I’ll add them to the case.",
+  "trace": {
+    "request_id": "da5f81ef629e4802",
+    "name": "agent.request",
+    "span_id": "21beaf75cd324ee2",
+    "started_at": 1793213437.6933777,
+    "ended_at": 1793213446.2768872,
+    "duration_ms": 8583.5,
+    "attributes": {
+      "session.id": "f92921ad354e",
+      "dialog.step_number": 7,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 2797,
+      "gen_ai.usage.total_output_tokens": 779
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "fb39f1495f6f4594",
+        "started_at": 1793213437.6939356,
+        "ended_at": 1793213446.2768638,
+        "duration_ms": 8582.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2797,
+          "gen_ai.usage.output_tokens": 779
+        },
+        "children": []
+      }
+    ]
+  }
+}

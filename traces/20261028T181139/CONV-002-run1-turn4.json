@@ -1,0 +1,47 @@
+{
+  "case": "CONV-002",
+  "run": 1,
+  "turn": 4,
+  "user": "And the FX spread if I pay in USD?",
+  "answer": "What I did\n- I checked your account on file: your primary account (ACC-1005) is in EUR.\n\nWhat I need\n- To give the exact FX spread and full breakdown I need the payment amount and to confirm the conversion direction. Do you mean converting from your EUR account to pay a USD merchant (EUR → USD), or converting USD into EUR (USD → EUR)? And what amount should I quote?\n\nWhat happens next\n- Once you confirm amount and direction I'll generate a full FX quote showing the mid rate, your tier spread, any free allowance, and the final converted amount.",
+  "trace": {
+    "request_id": "6de7cf70d89a4ad9",
+    "name": "agent.request",
+    "span_id": "c09be1ea42404547",
+    "started_at": 1793211378.6131523,
+    "ended_at": 1793211390.2368882,
+    "duration_ms": 11623.7,
+    "attributes": {
+      "session.id": "72620af59be0",
+      "dialog.step_number": 4,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 1837,
+      "gen_ai.usage.total_output_tokens": 963
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "1131c44edbca41e8",
+        "started_at": 1793211378.6137314,
+        "ended_at": 1793211390.236854,
+        "duration_ms": 11623.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1837,
+          "gen_ai.usage.output_tokens": 963
+        },
+        "children": []
+      }
+    ]
+  }
+}

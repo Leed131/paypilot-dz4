@@ -1,0 +1,44 @@
+{
+  "case": "MEM-001-RC",
+  "run": 1,
+  "turn": 4,
+  "user": "Just confirm back to me: what is the exact reason code recorded on my dispute case?",
+  "answer": "What I checked\n- I reviewed the dispute record we opened for your account (Dispute ID 1) and the eligibility check for TX-0401.\n\nWhat I found\n- The exact reason code recorded on your dispute is: duplicate_charge.\n- Dispute details on file: Dispute ID 1, for transaction TX-0401, amount 240.00 EUR, status: open.\n\nWhat happens next\n- A human reviewer is queued for this case (Escalation ID 1) and will contact you by your registered email if they need more information. Notifications will be sent on every dispute state change.\n\nWould you like me to send a copy of the dispute confirmation to your registered email now?",
+  "trace": {
+    "request_id": "869303de3f0e41fc",
+    "name": "agent.request",
+    "span_id": "5e57a0f804284398",
+    "started_at": 1793210322.673168,
+    "ended_at": 1793210328.4749594,
+    "duration_ms": 5801.8,
+    "attributes": {
+      "session.id": "2d96f1889320",
+      "dialog.step_number": 4,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 2371,
+      "gen_ai.usage.total_output_tokens": 537
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "ee97a56713ba4b5c",
+        "started_at": 1793210322.6732736,
+        "ended_at": 1793210328.4749315,
+        "duration_ms": 5801.7,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2371,
+          "gen_ai.usage.output_tokens": 537
+        },
+        "children": []
+      }
+    ]
+  }
+}

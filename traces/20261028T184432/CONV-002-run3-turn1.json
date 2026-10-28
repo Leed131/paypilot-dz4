@@ -1,0 +1,176 @@
+{
+  "case": "CONV-002",
+  "run": 3,
+  "turn": 1,
+  "user": "I'm CUS-0004. Transaction TX-0401, 240.00 EUR: the goods never arrived. Which reason code applies?",
+  "answer": "What I did\n- I retrieved your account (ACC-1005) and looked up our dispute reason-code rules.\n\nWhat I found\n- The correct reason code for \"goods never arrived\" is goods_not_received.\n- The chargeback window for goods_not_received is 90 days from the transaction date.\n- Note: disputes filed under the wrong code are often declined.\n\nWhat happens next\n- If you want, I can check whether TX-0401 (240.00 EUR) is still eligible under goods_not_received and, if eligible, open the dispute for you. Shall I proceed?",
+  "trace": {
+    "request_id": "aca5867bbb0544d6",
+    "name": "agent.request",
+    "span_id": "2f61a01c23d0472e",
+    "started_at": 1793213343.593211,
+    "ended_at": 1793213365.370367,
+    "duration_ms": 21777.2,
+    "attributes": {
+      "session.id": "f92921ad354e",
+      "dialog.step_number": 1,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4991,
+      "gen_ai.usage.total_output_tokens": 2179
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "4268ba9bad054452",
+        "started_at": 1793213343.5934472,
+        "ended_at": 1793213349.3182166,
+        "duration_ms": 5724.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1439,
+          "gen_ai.usage.output_tokens": 600
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "f4d045b7c1d44fe3",
+        "started_at": 1793213349.318325,
+        "ended_at": 1793213349.3195047,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {
+            "account_id": null
+          },
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "ac86e63429f8432a",
+        "started_at": 1793213349.3196194,
+        "ended_at": 1793213354.9874907,
+        "duration_ms": 5667.9,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1554,
+          "gen_ai.usage.output_tokens": 554
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "0f74a0e40fbe4cad",
+        "started_at": 1793213354.98764,
+        "ended_at": 1793213354.9882479,
+        "duration_ms": 0.6,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute reason goods not received 'goods never arrived' reason code 'goods_not_received'"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute reason goods not received 'goods never arrived' reason code 'goods_not_received'",
+            "fragments": [
+              {
+                "id": "disputes.md#s1",
+                "doc": "disputes.md",
+                "score": 1.3568,
+                "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
+              },
+              {
+                "id": "reason-codes.md#s6",
+                "doc": "reason-codes.md",
+                "score": 1.2005,
+                "text": "Reason code guide\n## Choosing a code\nThe reason code must match what actually happened. A dispute filed under the\nwrong code is declined and must be refiled, which may push it past its window."
+              },
+              {
+                "id": "reason-codes.md#s5",
+                "doc": "reason-codes.md",
+                "score": 0.8944,
+                "text": "Reason code guide\n## unauthorized_debit\nUsed for a direct debit the customer never mandated. This code carries the\nshortest window overall."
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 0.8839,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              }
+            ]
+          },
+          "retrieval.query": "dispute reason goods not received 'goods never arrived' reason code 'goods_not_received'",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes.md#s1",
+              "score": 1.3568,
+              "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window "
+            },
+            {
+              "id": "reason-codes.md#s6",
+              "score": 1.2005,
+              "text": "Reason code guide\n## Choosing a code\nThe reason code must match what actually happened. A dispute filed under the\nwrong code is declined and must be refiled, wh"
+            },
+            {
+              "id": "reason-codes.md#s5",
+              "score": 0.8944,
+              "text": "Reason code guide\n## unauthorized_debit\nUsed for a direct debit the customer never mandated. This code carries the\nshortest window overall."
+            },
+            {
+              "id": "disputes-process.md#s6",
+              "score": 0.8839,
+              "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction can"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "61468cfd2f474034",
+        "started_at": 1793213354.9883032,
+        "ended_at": 1793213365.3703482,
+        "duration_ms": 10382.0,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1998,
+          "gen_ai.usage.output_tokens": 1025
+        },
+        "children": []
+      }
+    ]
+  }
+}

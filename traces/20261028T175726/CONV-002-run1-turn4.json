@@ -1,0 +1,44 @@
+{
+  "case": "CONV-002",
+  "run": 1,
+  "turn": 4,
+  "user": "And the FX spread if I pay in USD?",
+  "answer": "Do you mean a card charge priced in USD that would be converted to your EUR account (USD → EUR)? If so, tell me the USD amount you want quoted and I will run an FX quote showing the mid rate, your tier spread, any free allowance, and the final EUR amount.\n\nIf you’d like, I can run an example (e.g. 100 USD) — tell me the amount to proceed.",
+  "trace": {
+    "request_id": "95007457bc69458b",
+    "name": "agent.request",
+    "span_id": "8d9755ddcb824b8b",
+    "started_at": 1793210450.1224158,
+    "ended_at": 1793210459.8188086,
+    "duration_ms": 9696.4,
+    "attributes": {
+      "session.id": "27c26fcc5f1b",
+      "dialog.step_number": 4,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 2271,
+      "gen_ai.usage.total_output_tokens": 862
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "19edfd3fe6954ba8",
+        "started_at": 1793210450.122646,
+        "ended_at": 1793210459.818783,
+        "duration_ms": 9696.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2271,
+          "gen_ai.usage.output_tokens": 862
+        },
+        "children": []
+      }
+    ]
+  }
+}

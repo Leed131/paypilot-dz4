@@ -1,0 +1,128 @@
+{
+  "case": "MEM-001-AMT",
+  "run": 1,
+  "turn": 2,
+  "user": "Thanks. How does the review process work in general?",
+  "answer": "What I did\n- Retrieved Verta’s dispute handling guidance and reviewed your open dispute (ID 1, TX-0401, status: open) and the escalation I queued.\n\nWhat I found (summary of the review process)\n- Case states: disputes move through open → under_review → provisional_credit → resolved_upheld or resolved_declined.\n- Evidence: we may ask you for supporting evidence (order confirmation, delivery record, merchant correspondence). If requested, failure to supply evidence within 7 calendar days will result in the case being declined.\n- Withdrawal: you may withdraw a dispute any time while it is open or under_review. Withdrawal is final; the same transaction cannot be disputed again under the same reason code.\n- Timelines: target review times are 10 business days for card reason codes and 20 business days for transfer reason codes. Complex cases involving a foreign acquirer can run up to 45 calendar days; we will notify you if an extended timeline applies.\n\nWhat happens next for your dispute\n- A human agent will review the case (escalation queued). They may request evidence — if so, please provide it within 7 calendar days to avoid decline.\n- The agent will follow the appropriate timeline (you’ll be notified if the review is extended).\n- Official correspondence and any requests will be sent to the email address registered on your account.\n\nIf you want, I can (a) add evidence now, (b) cancel/withdraw the dispute while it’s open, or (c) confirm which timeline applies once the agent begins review. Tell me which you’d like.",
+  "trace": {
+    "request_id": "2ac6793a3af6458e",
+    "name": "agent.request",
+    "span_id": "9c29cac40b1a48e9",
+    "started_at": 1793210345.8928497,
+    "ended_at": 1793210358.9150279,
+    "duration_ms": 13022.2,
+    "attributes": {
+      "session.id": "b8d124759ebf",
+      "dialog.step_number": 2,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4167,
+      "gen_ai.usage.total_output_tokens": 1271
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "07822cfa189040fe",
+        "started_at": 1793210345.893076,
+        "ended_at": 1793210348.7755976,
+        "duration_ms": 2882.5,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1865,
+          "gen_ai.usage.output_tokens": 236
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "84634c624bda4029",
+        "started_at": 1793210348.7756455,
+        "ended_at": 1793210348.7775795,
+        "duration_ms": 1.9,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute review process dispute handling timeline investigation steps evidence exchange customer notification duplicate_charge dispute review Verta documentation"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute review process dispute handling timeline investigation steps evidence exchange customer notification duplicate_charge dispute review Verta documentation",
+            "fragments": [
+              {
+                "id": "disputes-process.md#s5",
+                "doc": "disputes-process.md",
+                "score": 1.1355,
+                "text": "Dispute handling process\n## Evidence requirements\nThe customer may be asked for supporting evidence: an order confirmation, a\ndelivery record, correspondence with the merchant. Failure to supply requested\nevidence within 7 calendar days results in the case being declined."
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 1.0607,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              },
+              {
+                "id": "disputes-process.md#s2",
+                "doc": "disputes-process.md",
+                "score": 1.0,
+                "text": "Dispute handling process\n## Case states\nA dispute moves through: open, under_review, provisional_credit,\nresolved_upheld, resolved_declined. Only open and under_review cases can be\nwithdrawn by the customer."
+              },
+              {
+                "id": "disputes-process.md#s4",
+                "doc": "disputes-process.md",
+                "score": 0.915,
+                "text": "Dispute handling process\n## Review timelines\nThe review target is 10 business days for card reason codes and 20 business\ndays for transfer reason codes. Complex cases involving a foreign acquirer may\nrun to 45 calendar days; the customer is notified when that happens."
+              }
+            ]
+          },
+          "retrieval.query": "dispute review process dispute handling timeline investigation steps evidence exchange customer notification duplicate_charge dispute review Verta documentation",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes-process.md#s5",
+              "score": 1.1355,
+              "text": "Dispute handling process\n## Evidence requirements\nThe customer may be asked for supporting evidence: an order confirmation, a\ndelivery record, correspondence wi"
+            },
+            {
+              "id": "disputes-process.md#s6",
+              "score": 1.0607,
+              "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction can"
+            },
+            {
+              "id": "disputes-process.md#s2",
+              "score": 1.0,
+              "text": "Dispute handling process\n## Case states\nA dispute moves through: open, under_review, provisional_credit,\nresolved_upheld, resolved_declined. Only open and under"
+            },
+            {
+              "id": "disputes-process.md#s4",
+              "score": 0.915,
+              "text": "Dispute handling process\n## Review timelines\nThe review target is 10 business days for card reason codes and 20 business\ndays for transfer reason codes. Complex"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "3f154de11e424ec9",
+        "started_at": 1793210348.7776394,
+        "ended_at": 1793210358.9150078,
+        "duration_ms": 10137.4,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2302,
+          "gen_ai.usage.output_tokens": 1035
+        },
+        "children": []
+      }
+    ]
+  }
+}

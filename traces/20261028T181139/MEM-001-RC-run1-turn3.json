@@ -1,0 +1,143 @@
+{
+  "case": "MEM-001-RC",
+  "run": 1,
+  "turn": 3,
+  "user": "And what are the typical timelines?",
+  "answer": "What I did: I opened the dispute for service_not_rendered and escalated it to a human agent.\n\nWhat I found in our process guidelines:\n- Card disputes: review target is 10 business days.\n- Transfer disputes: review target is 20 business days.\n- Complex cases (for example involving a foreign acquirer) can run to 45 calendar days; you will be notified if your case moves into that category.\n- Provisional credit is applied within 2 business days only where the reason code is a fraud code and the disputed amount exceeds EUR 50; it can be reversed if the dispute is declined.\n\nWhat happens next: a human agent will follow up by the account email and may request supporting documents. You may withdraw the dispute before resolution if you choose. If you’d like, I can send a statement for the account period you need to the email registered on your account — shall I send one?",
+  "trace": {
+    "request_id": "9aaad72b70bb49ed",
+    "name": "agent.request",
+    "span_id": "0310b05f03f1480f",
+    "started_at": 1793211160.3647115,
+    "ended_at": 1793211184.6020617,
+    "duration_ms": 24237.4,
+    "attributes": {
+      "session.id": "3d16aee47d9a",
+      "dialog.step_number": 3,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 3571,
+      "gen_ai.usage.total_output_tokens": 1328
+    },
+    "children": [
+      {
+        "name": "agent.summarize",
+        "span_id": "f6045fde7d5d409e",
+        "started_at": 1793211160.3651924,
+        "ended_at": 1793211165.7047305,
+        "duration_ms": 5339.5,
+        "attributes": {
+          "summary.text": "- Customer requested a dispute for a suspected service_not_rendered.\n- I verified identity, confirmed the transaction was eligible, opened the dispute, and escalated it to a human agent.\n- I explained the review process at a high level: typical review timelines (shorter for card vs. transfer disputes; complex cases may take longer), provisional credit is only applied in certain fraud cases and can be reversed, and the customer may withdraw before resolution.\n- Next steps: human agent will follow up via the account email and may request supporting documents; I offered to send an account statement if needed.",
+          "summary.replaced_messages": 14
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "c90271ef0d69476d",
+        "started_at": 1793211165.7048388,
+        "ended_at": 1793211169.5997612,
+        "duration_ms": 3894.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1544,
+          "gen_ai.usage.output_tokens": 302
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "d57f9d03dde04148",
+        "started_at": 1793211169.59983,
+        "ended_at": 1793211169.601055,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute timelines card disputes transfer disputes typical review timelines provisional credit goods_not_received service_not_rendered Verta documentation"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute timelines card disputes transfer disputes typical review timelines provisional credit goods_not_received service_not_rendered Verta documentation",
+            "fragments": [
+              {
+                "id": "disputes-process.md#s3",
+                "doc": "disputes-process.md",
+                "score": 1.281,
+                "text": "Dispute handling process\n## Provisional credit\nWhere the disputed amount exceeds EUR 50 and the reason code is a fraud code, a\nprovisional credit is applied within two business days. Provisional credit is\nreversed if the dispute is later declined."
+              },
+              {
+                "id": "glossary.md#s7",
+                "doc": "glossary.md",
+                "score": 0.9428,
+                "text": "Glossary\n## Provisional credit\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\nis declined."
+              },
+              {
+                "id": "disputes-process.md#s4",
+                "doc": "disputes-process.md",
+                "score": 0.915,
+                "text": "Dispute handling process\n## Review timelines\nThe review target is 10 business days for card reason codes and 20 business\ndays for transfer reason codes. Complex cases involving a foreign acquirer may\nrun to 45 calendar days; the customer is notified when that happens."
+              },
+              {
+                "id": "tariffs.md#s3",
+                "doc": "tariffs.md",
+                "score": 0.7143,
+                "text": "Verta tariff schedule\n## Transfer fees by type\n| Transfer type | Flat fee | Percentage fee |\n|---|---|---|\n| Internal | EUR 0.00 | 0% |\n| SEPA | EUR 0.35 | 0% |\n| SWIFT | EUR 15.00 | 0.3% |\n| Card payment | EUR 0.00 | 1.2% |\n\nThe percentage fee is calculated on the EUR equivalent of the transfer amount."
+              }
+            ]
+          },
+          "retrieval.query": "dispute timelines card disputes transfer disputes typical review timelines provisional credit goods_not_received service_not_rendered Verta documentation",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes-process.md#s3",
+              "score": 1.281,
+              "text": "Dispute handling process\n## Provisional credit\nWhere the disputed amount exceeds EUR 50 and the reason code is a fraud code, a\nprovisional credit is applied wit"
+            },
+            {
+              "id": "glossary.md#s7",
+              "score": 0.9428,
+              "text": "Glossary\n## Provisional credit\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\nis declined."
+            },
+            {
+              "id": "disputes-process.md#s4",
+              "score": 0.915,
+              "text": "Dispute handling process\n## Review timelines\nThe review target is 10 business days for card reason codes and 20 business\ndays for transfer reason codes. Complex"
+            },
+            {
+              "id": "tariffs.md#s3",
+              "score": 0.7143,
+              "text": "Verta tariff schedule\n## Transfer fees by type\n| Transfer type | Flat fee | Percentage fee |\n|---|---|---|\n| Internal | EUR 0.00 | 0% |\n| SEPA | EUR 0.35 | 0% |"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "e39c002d7e1c4a8e",
+        "started_at": 1793211169.6011357,
+        "ended_at": 1793211184.6020422,
+        "duration_ms": 15000.9,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2027,
+          "gen_ai.usage.output_tokens": 1026
+        },
+        "children": []
+      }
+    ]
+  }
+}

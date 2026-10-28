@@ -1,0 +1,131 @@
+{
+  "case": "MEM-001-RC",
+  "run": 1,
+  "turn": 2,
+  "user": "Thanks. How does the review process work in general?",
+  "answer": "What I did\n- Opened the dispute for TX-0401 and escalated the case to a human agent for review.\n\nWhat I found in our process guidance\n- Timeline targets: 10 business days for card reason codes and 20 business days for transfer reason codes. Complex cases involving a foreign acquirer can run to 45 calendar days; we notify you if that happens.\n- Provisional credit: only applied where the dispute is for a fraud reason code and the disputed amount exceeds EUR 50; it is applied within two business days and is reversed if the dispute is later declined.\n- You may withdraw a dispute at any time before resolution; withdrawal is final and the same transaction cannot be disputed again under the same reason code.\n\nWhat happens next for your case\n- The dispute will be reviewed according to the applicable timeline (you’ll be notified if the case becomes complex).\n- If any additional information is needed, a human agent will contact you via the email registered to your account.\n- You may withdraw the dispute before resolution if you choose; tell me if you want to do that.\n\nIf you want, I can send a statement or supporting documents for ACC-1005 to your registered email to help the review. Tell me the period you need.",
+  "trace": {
+    "request_id": "3ce898d287984b85",
+    "name": "agent.request",
+    "span_id": "c5a1bf04ca57451c",
+    "started_at": 1793211145.42446,
+    "ended_at": 1793211160.3559337,
+    "duration_ms": 14931.5,
+    "attributes": {
+      "session.id": "3d16aee47d9a",
+      "dialog.step_number": 2,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4577,
+      "gen_ai.usage.total_output_tokens": 1328
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "30dcb5263e304f3f",
+        "started_at": 1793211145.42501,
+        "ended_at": 1793211147.8337977,
+        "duration_ms": 2408.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2083,
+          "gen_ai.usage.output_tokens": 105
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "da04676776034a0a",
+        "started_at": 1793211147.833872,
+        "ended_at": 1793211147.8365731,
+        "duration_ms": 2.7,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute review process duplicate charge timeline steps merchant investigation provisional credit communications timelines what customer receives"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute review process duplicate charge timeline steps merchant investigation provisional credit communications timelines what customer receives",
+            "fragments": [
+              {
+                "id": "disputes-process.md#s3",
+                "doc": "disputes-process.md",
+                "score": 1.4412,
+                "text": "Dispute handling process\n## Provisional credit\nWhere the disputed amount exceeds EUR 50 and the reason code is a fraud code, a\nprovisional credit is applied within two business days. Provisional credit is\nreversed if the dispute is later declined."
+              },
+              {
+                "id": "glossary.md#s7",
+                "doc": "glossary.md",
+                "score": 0.9428,
+                "text": "Glossary\n## Provisional credit\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\nis declined."
+              },
+              {
+                "id": "disputes-process.md#s4",
+                "doc": "disputes-process.md",
+                "score": 0.915,
+                "text": "Dispute handling process\n## Review timelines\nThe review target is 10 business days for card reason codes and 20 business\ndays for transfer reason codes. Complex cases involving a foreign acquirer may\nrun to 45 calendar days; the customer is notified when that happens."
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 0.8839,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              }
+            ]
+          },
+          "retrieval.query": "dispute review process duplicate charge timeline steps merchant investigation provisional credit communications timelines what customer receives",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes-process.md#s3",
+              "score": 1.4412,
+              "text": "Dispute handling process\n## Provisional credit\nWhere the disputed amount exceeds EUR 50 and the reason code is a fraud code, a\nprovisional credit is applied wit"
+            },
+            {
+              "id": "glossary.md#s7",
+              "score": 0.9428,
+              "text": "Glossary\n## Provisional credit\nA temporary refund applied while a dispute is reviewed; reversed if the dispute\nis declined."
+            },
+            {
+              "id": "disputes-process.md#s4",
+              "score": 0.915,
+              "text": "Dispute handling process\n## Review timelines\nThe review target is 10 business days for card reason codes and 20 business\ndays for transfer reason codes. Complex"
+            },
+            {
+              "id": "disputes-process.md#s6",
+              "score": 0.8839,
+              "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction can"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "dd17981a2fd845d1",
+        "started_at": 1793211147.8369598,
+        "ended_at": 1793211160.3559058,
+        "duration_ms": 12518.9,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2494,
+          "gen_ai.usage.output_tokens": 1223
+        },
+        "children": []
+      }
+    ]
+  }
+}

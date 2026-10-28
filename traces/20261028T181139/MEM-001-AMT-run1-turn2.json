@@ -1,0 +1,131 @@
+{
+  "case": "MEM-001-AMT",
+  "run": 1,
+  "turn": 2,
+  "user": "Thanks. How does the review process work in general?",
+  "answer": "Summary of the review process (from Verta policy)\n1. Eligibility check\n   - Before a case is opened the agent verifies eligibility for the supplied reason code. Ineligible requests are refused and the failing condition is named.\n   - For your transaction this check was completed and returned eligible.\n\n2. Case opening and assignment\n   - Once eligible the dispute is opened against the single settled transaction and assigned for review.\n\n3. Review and state changes\n   - The case moves through review states; each state change generates a notification that names the new state.\n\n4. Customer options during review\n   - You may withdraw a dispute at any time before resolution. Withdrawal is final and the same transaction cannot be disputed again under the same reason code.\n\nWhat I did and current status for your case\n- Dispute ID: 1 — status: open.\n- Transaction date on record: 2026-07-20; dispute window / eligibility deadline: 2026-09-18.\n- A human agent has been queued to review the case.\n\nWhat happens next\n- The queued reviewer will examine the case and the dispute will progress through the review states. You will receive notifications for each state change.\n- If you want me to add any extra information or documents to the dispute now, tell me and I will attach them to the case.",
+  "trace": {
+    "request_id": "ebce48d9e9ab4d80",
+    "name": "agent.request",
+    "span_id": "a4512da8bd8b4e16",
+    "started_at": 1793211242.9899545,
+    "ended_at": 1793211267.097404,
+    "duration_ms": 24107.4,
+    "attributes": {
+      "session.id": "6779b3aad708",
+      "dialog.step_number": 2,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4495,
+      "gen_ai.usage.total_output_tokens": 1854
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "06ba466e5f8d4c7c",
+        "started_at": 1793211242.9903736,
+        "ended_at": 1793211246.7665904,
+        "duration_ms": 3776.2,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2044,
+          "gen_ai.usage.output_tokens": 104
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "ad8372d824934b68",
+        "started_at": 1793211246.7667713,
+        "ended_at": 1793211246.7679656,
+        "duration_ms": 1.2,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute review process Verta dispute process timeline steps what happens after opening a dispute"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute review process Verta dispute process timeline steps what happens after opening a dispute",
+            "fragments": [
+              {
+                "id": "complaints.md#s1",
+                "doc": "complaints.md",
+                "score": 1.2374,
+                "text": "Complaints\n## Difference from a dispute\nA dispute concerns a specific transaction. A complaint concerns the service\nitself: a delay, an error, or the conduct of an agent. The two follow separate\nprocesses."
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 1.2374,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              },
+              {
+                "id": "disputes-process.md#s1",
+                "doc": "disputes-process.md",
+                "score": 1.1429,
+                "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a reason code. The agent verifies eligibility\nbefore the case is opened; an ineligible request is refused with the failing\ncondition named, except where confidentiality rules apply."
+              },
+              {
+                "id": "notifications.md#s2",
+                "doc": "notifications.md",
+                "score": 1.0206,
+                "text": "Notifications\n## Dispute updates\nA dispute generates a notification on every state change. The notification\nnames the state, never the internal reason for a decision."
+              }
+            ]
+          },
+          "retrieval.query": "dispute review process Verta dispute process timeline steps what happens after opening a dispute",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "complaints.md#s1",
+              "score": 1.2374,
+              "text": "Complaints\n## Difference from a dispute\nA dispute concerns a specific transaction. A complaint concerns the service\nitself: a delay, an error, or the conduct of"
+            },
+            {
+              "id": "disputes-process.md#s6",
+              "score": 1.2374,
+              "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction can"
+            },
+            {
+              "id": "disputes-process.md#s1",
+              "score": 1.1429,
+              "text": "Dispute handling process\n## Raising a dispute\nA dispute is raised against a single settled transaction. The customer supplies\nthe transaction reference and a re"
+            },
+            {
+              "id": "notifications.md#s2",
+              "score": 1.0206,
+              "text": "Notifications\n## Dispute updates\nA dispute generates a notification on every state change. The notification\nnames the state, never the internal reason for a dec"
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "bf45c34a22ed46c4",
+        "started_at": 1793211246.7680812,
+        "ended_at": 1793211267.097374,
+        "duration_ms": 20329.3,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2451,
+          "gen_ai.usage.output_tokens": 1750
+        },
+        "children": []
+      }
+    ]
+  }
+}

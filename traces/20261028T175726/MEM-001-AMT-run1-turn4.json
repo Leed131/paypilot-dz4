@@ -1,0 +1,87 @@
+{
+  "case": "MEM-001-AMT",
+  "run": 1,
+  "turn": 4,
+  "user": "Just confirm back to me: what is the exact amount recorded on my dispute case?",
+  "answer": "What I did\n- Verified your account details.\n\nWhat I found\n- Dispute ID 1 (for transaction TX-0401) is open and the amount recorded on the dispute is 240.00 EUR.\n\nWhat happens next\n- A human agent (escalation queued) will review the case and contact you at the email on file if they need evidence. If evidence is requested, you’ll have 7 calendar days to supply it.",
+  "trace": {
+    "request_id": "23fc6f700b9f4fa2",
+    "name": "agent.request",
+    "span_id": "b2299aa18ac4447e",
+    "started_at": 1793210378.4408355,
+    "ended_at": 1793210394.0832884,
+    "duration_ms": 15642.5,
+    "attributes": {
+      "session.id": "b8d124759ebf",
+      "dialog.step_number": 4,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4756,
+      "gen_ai.usage.total_output_tokens": 1399
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "d0f3b8fafc0b4d63",
+        "started_at": 1793210378.4410622,
+        "ended_at": 1793210387.6739125,
+        "duration_ms": 9232.9,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2323,
+          "gen_ai.usage.output_tokens": 787
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "c5a355c178b9465f",
+        "started_at": 1793210387.6739955,
+        "ended_at": 1793210387.6749418,
+        "duration_ms": 0.9,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {},
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "633fc783d3f44485",
+        "started_at": 1793210387.6750307,
+        "ended_at": 1793210394.0832698,
+        "duration_ms": 6408.2,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 2433,
+          "gen_ai.usage.output_tokens": 612
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "status": "passed",
+  "set_hash": "67ca1d4fe79f",
+  "coverage": {
+    "cases": 5,
+    "multi_turn": 5,
+    "layers": {
+      "memory": 5
+    },
+    "oracles": {
+      "corpus": 1,
+      "engine": 4
+    },
+    "sources": {
+      "complaint": 1,
+      "plan": 4
+    },
+    "severities": {
+      "critical": 1,
+      "high": 4
+    },
+    "ladder_levels": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "gates": {
+      "release": 5
+    },
+    "human_oracle_pct": 0.0,
+    "severity_filled_pct": 100.0
+  },
+  "source_loader_blob": "f55a92bff06b5365e1819acd8aa7a1399f58b735",
+  "source_assertions_blob": "2884af75b52aec5e4d4df98d1e2435dedc33dd46",
+  "user_turns_per_profile": 180,
+  "profiles_planned": 2,
+  "user_turns_both_profiles": 360,
+  "cases": [
+    {
+      "id": "CONV-H01",
+      "length": 7,
+      "invariants": 5,
+      "compiled_checks": 14
+    },
+    {
+      "id": "CONV-H02",
+      "length": 5,
+      "invariants": 5,
+      "compiled_checks": 14
+    },
+    {
+      "id": "CONV-H03",
+      "length": 10,
+      "invariants": 5,
+      "compiled_checks": 18
+    },
+    {
+      "id": "CONV-H04",
+      "length": 7,
+      "invariants": 5,
+      "compiled_checks": 18
+    },
+    {
+      "id": "CONV-H05",
+      "length": 7,
+      "invariants": 1,
+      "compiled_checks": 7
+    }
+  ]
+}

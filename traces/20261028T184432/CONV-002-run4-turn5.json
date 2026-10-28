@@ -1,0 +1,47 @@
+{
+  "case": "CONV-002",
+  "run": 4,
+  "turn": 5,
+  "user": "Fine. Back to that charge — what do I do next?",
+  "answer": "What I did\n- Confirmed your account and the dispute checks we ran earlier.\n\nWhat I found\n- The settled card charge is eligible to be disputed under reason code service_not_rendered (goods never arrived).\n\nWhat happens next (options)\n- I can open the dispute for that transaction now on your behalf. I will submit it under service_not_rendered using the transaction amount and currency by default.\n- If you prefer a human review first, I can escalate this to a human agent instead.\n- If you have supporting evidence (order confirmation, tracking number, seller messages) tell me now and I’ll include guidance on attaching it to the dispute.\n\nWhat I need from you\n- Tell me whether to (a) open the dispute now, or (b) escalate to a human. If you want the dispute opened but for a different amount than the transaction, say the amount.",
+  "trace": {
+    "request_id": "d82bf348423e43d4",
+    "name": "agent.request",
+    "span_id": "7c9d85e7be584aa8",
+    "started_at": 1793213519.099731,
+    "ended_at": 1793213534.2561421,
+    "duration_ms": 15156.4,
+    "attributes": {
+      "session.id": "a5ee2cbb2c3d",
+      "dialog.step_number": 5,
+      "run.profile": "lesson-05",
+      "run.active_defects": [
+        "D06",
+        "D07"
+      ],
+      "prompt.version": "base.v1+D07",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 1996,
+      "gen_ai.usage.total_output_tokens": 1467
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "5fb1990519bf4dca",
+        "started_at": 1793213519.1002655,
+        "ended_at": 1793213534.2561026,
+        "duration_ms": 15155.8,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1996,
+          "gen_ai.usage.output_tokens": 1467
+        },
+        "children": []
+      }
+    ]
+  }
+}

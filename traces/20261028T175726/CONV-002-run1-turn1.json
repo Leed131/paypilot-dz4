@@ -1,0 +1,173 @@
+{
+  "case": "CONV-002",
+  "run": 1,
+  "turn": 1,
+  "user": "I'm CUS-0004. Transaction TX-0401, 240.00 EUR: the goods never arrived. Which reason code applies?",
+  "answer": "What I did\n- Retrieved your account (ACC-1005) and checked Verta's dispute guidance.\n\nWhat I found\n- The correct reason code for \"goods never arrived\" is goods_not_received.\n- The goods_not_received chargeback window is 90 days from the transaction date, and filing under the wrong code can cause a decline.\n\nWhat happens next\n- I can check dispute eligibility for TX-0401 (240.00 EUR) and, if eligible, open the dispute under goods_not_received on your behalf for account ACC-1005.\n- If the eligibility check returns ineligible I will not open a dispute and will explain the reason and next steps.\n\nShall I proceed to check eligibility and open the dispute for TX-0401?",
+  "trace": {
+    "request_id": "473b95c6eccc46fa",
+    "name": "agent.request",
+    "span_id": "b4d583e1fab74c41",
+    "started_at": 1793210394.1322925,
+    "ended_at": 1793210412.8091846,
+    "duration_ms": 18676.9,
+    "attributes": {
+      "session.id": "27c26fcc5f1b",
+      "dialog.step_number": 1,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0004",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 4598,
+      "gen_ai.usage.total_output_tokens": 1510
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "910ac6fe8e374283",
+        "started_at": 1793210394.1324332,
+        "ended_at": 1793210398.6863875,
+        "duration_ms": 4554.0,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1307,
+          "gen_ai.usage.output_tokens": 410
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "c62401a4ab404b86",
+        "started_at": 1793210398.686432,
+        "ended_at": 1793210398.6870253,
+        "duration_ms": 0.6,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {
+            "account_id": ""
+          },
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0004",
+              "name": "Danylo Kovalenko",
+              "tier": "tier1"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1005",
+                "customer_id": "CUS-0004",
+                "currency": "EUR",
+                "balance": 1310.2,
+                "tier": "tier1",
+                "holder": "Danylo Kovalenko"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "8ebd126b6cc8411e",
+        "started_at": 1793210398.6870844,
+        "ended_at": 1793210401.7654164,
+        "duration_ms": 3078.3,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1422,
+          "gen_ai.usage.output_tokens": 170
+        },
+        "children": []
+      },
+      {
+        "name": "tool.search_knowledge_base",
+        "span_id": "70d07e41cc36440c",
+        "started_at": 1793210401.7654705,
+        "ended_at": 1793210401.7661111,
+        "duration_ms": 0.6,
+        "attributes": {
+          "tool.name": "search_knowledge_base",
+          "tool.arguments": {
+            "query": "dispute reason codes goods not received \"goods not received\" reason code Verta dispute codes"
+          },
+          "tool.result": {
+            "index": "kb_clean",
+            "top_k": 4,
+            "query": "dispute reason codes goods not received \"goods not received\" reason code Verta dispute codes",
+            "fragments": [
+              {
+                "id": "disputes.md#s1",
+                "doc": "disputes.md",
+                "score": 1.3568,
+                "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window closes is not eligible.\n\n| Reason code | Window (days) |\n|---|---|\n| fraud_card_not_present | 120 |\n| goods_not_received | 90 |\n| duplicate_charge | 60 |\n| service_not_rendered | 90 |\n| unauthorized_debit | 56 |"
+              },
+              {
+                "id": "reason-codes.md#s6",
+                "doc": "reason-codes.md",
+                "score": 1.2005,
+                "text": "Reason code guide\n## Choosing a code\nThe reason code must match what actually happened. A dispute filed under the\nwrong code is declined and must be refiled, which may push it past its window."
+              },
+              {
+                "id": "disputes-process.md#s6",
+                "doc": "disputes-process.md",
+                "score": 0.8839,
+                "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction cannot be disputed again under the same reason code."
+              },
+              {
+                "id": "glossary.md#s4",
+                "doc": "glossary.md",
+                "score": 0.8528,
+                "text": "Glossary\n## Reason code\nThe classification of why a transaction is disputed. The reason code determines\nthe chargeback window and the evidence required."
+              }
+            ]
+          },
+          "retrieval.query": "dispute reason codes goods not received \"goods not received\" reason code Verta dispute codes",
+          "retrieval.index": "kb_clean",
+          "retrieval.top_k": 4,
+          "retrieval.fragments": [
+            {
+              "id": "disputes.md#s1",
+              "score": 1.3568,
+              "text": "Payment dispute rules\n## Reason codes and chargeback windows\nEach reason code has a window in days from the transaction date. A dispute opened after the window "
+            },
+            {
+              "id": "reason-codes.md#s6",
+              "score": 1.2005,
+              "text": "Reason code guide\n## Choosing a code\nThe reason code must match what actually happened. A dispute filed under the\nwrong code is declined and must be refiled, wh"
+            },
+            {
+              "id": "disputes-process.md#s6",
+              "score": 0.8839,
+              "text": "Dispute handling process\n## Withdrawing a dispute\nA customer may withdraw a dispute at any time before resolution. Withdrawal is\nfinal; the same transaction can"
+            },
+            {
+              "id": "glossary.md#s4",
+              "score": 0.8528,
+              "text": "Glossary\n## Reason code\nThe classification of why a transaction is disputed. The reason code determines\nthe chargeback window and the evidence required."
+            }
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "5850d30582324c0f",
+        "started_at": 1793210401.7661638,
+        "ended_at": 1793210412.809164,
+        "duration_ms": 11043.0,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1869,
+          "gen_ai.usage.output_tokens": 930
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "case": "FX-004",
+  "run": 1,
+  "turn": 1,
+  "user": "I'm CUS-0007. Convert 2000 EUR to USD. What is the final amount I receive?",
+  "answer": "What I did\n- I looked up your customer record (CUS-0007) and EUR account ACC-1008, then requested an FX quote for converting 2,000 EUR → USD.\n\nWhat I found (quote components)\n- Mid-market rate: 1 EUR = 1.086957 USD\n- Gross (2000 × mid rate): 2,173.913043 USD\n- Tier: tier2 spread: 0.9% → spread amount: 19.565217 USD\n- Free allowance: 1,000 EUR (allowance_applied: false)\n- Final amount you receive: 2,154.347826 USD (rounded: 2,154.35 USD)\n\nNext steps\n- If you want to proceed with the conversion, tell me to go ahead and I will arrange the transaction or provide the next steps.",
+  "trace": {
+    "request_id": "a16bcf9371024180",
+    "name": "agent.request",
+    "span_id": "3a0f420af92d484f",
+    "started_at": 1793210246.1781502,
+    "ended_at": 1793210270.2251353,
+    "duration_ms": 24047.0,
+    "attributes": {
+      "session.id": "e6cf52c761e5",
+      "dialog.step_number": 1,
+      "run.profile": "clean",
+      "run.active_defects": [],
+      "prompt.version": "base.v1",
+      "reply.language_detected": "",
+      "llm.provider": "openai",
+      "session.customer_id": "CUS-0007",
+      "context.replay_active": false,
+      "gen_ai.usage.total_input_tokens": 5731,
+      "gen_ai.usage.total_output_tokens": 2065
+    },
+    "children": [
+      {
+        "name": "llm.call",
+        "span_id": "bb423f1044b34404",
+        "started_at": 1793210246.1783965,
+        "ended_at": 1793210250.4294739,
+        "duration_ms": 4251.1,
+        "attributes": {
+          "agent.loop_step": 0,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1301,
+          "gen_ai.usage.output_tokens": 155
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "beeda9b5dbb94767",
+        "started_at": 1793210250.4296558,
+        "ended_at": 1793210250.4309587,
+        "duration_ms": 1.3,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {
+            "account_id": "CUS-0007"
+          },
+          "tool.result": {
+            "error": "account CUS-0007 not found for CUS-0007"
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "e89e8d8fb078477d",
+        "started_at": 1793210250.4310439,
+        "ended_at": 1793210254.5018296,
+        "duration_ms": 4070.8,
+        "attributes": {
+          "agent.loop_step": 1,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1352,
+          "gen_ai.usage.output_tokens": 275
+        },
+        "children": []
+      },
+      {
+        "name": "tool.get_account",
+        "span_id": "8a09d70c63704009",
+        "started_at": 1793210254.5019794,
+        "ended_at": 1793210254.5030713,
+        "duration_ms": 1.1,
+        "attributes": {
+          "tool.name": "get_account",
+          "tool.arguments": {},
+          "tool.result": {
+            "customer": {
+              "id": "CUS-0007",
+              "name": "Greta Lindqvist",
+              "tier": "tier2"
+            },
+            "accounts": [
+              {
+                "id": "ACC-1008",
+                "customer_id": "CUS-0007",
+                "currency": "EUR",
+                "balance": 27600.0,
+                "tier": "tier2",
+                "holder": "Greta Lindqvist"
+              }
+            ]
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "1a016b0f20cd4f72",
+        "started_at": 1793210254.5031936,
+        "ended_at": 1793210256.4023185,
+        "duration_ms": 1899.1,
+        "attributes": {
+          "agent.loop_step": 2,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1460,
+          "gen_ai.usage.output_tokens": 42
+        },
+        "children": []
+      },
+      {
+        "name": "tool.quote_fx",
+        "span_id": "3d3a4541450b481b",
+        "started_at": 1793210256.4023795,
+        "ended_at": 1793210256.403285,
+        "duration_ms": 0.9,
+        "attributes": {
+          "tool.name": "quote_fx",
+          "tool.arguments": {
+            "customer_id": "CUS-0007",
+            "amount": 2000,
+            "from_currency": "EUR",
+            "to_currency": "USD"
+          },
+          "tool.result": {
+            "from_currency": "EUR",
+            "to_currency": "USD",
+            "amount": 2000,
+            "mid_rate": 1.086957,
+            "tier": "tier2",
+            "spread_pct": 0.9,
+            "allowance_total_eur": 1000,
+            "allowance_used_before_eur": 0.0,
+            "allowance_applied": false,
+            "gross_amount": 2173.913043,
+            "spread_amount": 19.565217,
+            "final_amount": 2154.347826
+          }
+        },
+        "children": []
+      },
+      {
+        "name": "llm.call",
+        "span_id": "5924231625134d36",
+        "started_at": 1793210256.403357,
+        "ended_at": 1793210270.2250726,
+        "duration_ms": 13821.7,
+        "attributes": {
+          "agent.loop_step": 3,
+          "gen_ai.request.model": "gpt-5-mini-2025-08-07",
+          "gen_ai.usage.input_tokens": 1618,
+          "gen_ai.usage.output_tokens": 1593
+        },
+        "children": []
+      }
+    ]
+  }
+}
